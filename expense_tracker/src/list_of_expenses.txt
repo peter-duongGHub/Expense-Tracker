@@ -1,0 +1,4 @@
+
+
+Expense: Peter, Bills, Location: SYDNEY Amount: 40.00 Date: 2024-10-10
+Expense: Peter, Bills, Location: 40 Amount: 40.00 Date: 2020-10-10
