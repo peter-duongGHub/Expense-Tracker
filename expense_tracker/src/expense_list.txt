@@ -1,0 +1,2 @@
+Cheese, Food, Location: SYDNEY Amount: 10.00 Date: 2024-10-10
+Water, Food, Location: BRISBANE Amount: 20.00 Date: 2024-10-10
