@@ -89,7 +89,7 @@ def view_expense():
                 listed_expense = f.readlines()
                 for i, expense in enumerate(listed_expense):
                     print(f"{i+1}. {expense}".strip())
-                return listed_expense
+                return
         else:
             print("You have selected not to view your entries!")
     else: 
@@ -108,16 +108,16 @@ def remove_expense():
         if os.path.exists(FILE_PATH):
             with open(FILE_PATH, 'r') as f:
                 lines = f.readlines()
-                lineindex = 1
                 view_expense()
                 delete_line = int(input("Which expense entry would you like to delete? "))
+                lineindex = 1
                 with open(FILE_PATH, 'w') as f:
-                    for textline in lines:
+                    for line in lines:
                         if lineindex != delete_line:
-                            f.write(textline)
-                            lineindex+=1
-                        else:
-                            print(f"You have successfully deleted entry {delete_line}")
+                            f.write(line)
+                        lineindex += 1
+
+            print(f"You have successfully deleted entry {delete_line}")
 
         else:
             print("You do not currently have any expense entries to remove! ")
@@ -125,7 +125,7 @@ def remove_expense():
 def save_expense(new_expense_object:ExpenseTracker, FILE_PATH):
     print(f"Saving your expense.... {new_expense_object} to {FILE_PATH}")
     with open(FILE_PATH, "a+") as f:
-        f.write(f"{new_expense_object.name}, {new_expense_object.amount}, {new_expense_object.location}, {new_expense_object.date}, {new_expense_object.category}\n")
+        f.write(f"{new_expense_object.name}, {new_expense_object.amount:.2f}, {new_expense_object.location}, {new_expense_object.date}, {new_expense_object.category}\n")
 
 def add_expense():
     count = 0
@@ -185,6 +185,6 @@ def add_expense():
             FILE_PATH = "expenses_list.txt"
             save_expense(new_expense_object, FILE_PATH)
             
-            return new_expense_object
+            return
             
 main()

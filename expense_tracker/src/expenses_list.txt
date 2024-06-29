@@ -1,1 +1,2 @@
-Cheese, 20.0, SYDNEY, 2024-10-10, Food
+Bread, 2.0, SYDNEY, 2024-10-10, Food
+Rent, 300.0, BRISBANE, 2024-10-10, Rent
