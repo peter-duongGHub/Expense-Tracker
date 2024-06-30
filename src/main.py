@@ -34,15 +34,15 @@ def sub_menu(user_selection):
         while True:
             console.print("[bold dark_goldenrod]What would you like to do first?[/]\n")
             console.print("[bold underline orange_red1]Menu:[/] ")
-            print("1. [bold green]Add[/] & [bold cornflower_blue]Save[/] Expense to Text File")
-            print("2. [bold medium_purple]View[/] Expense Entries")
-            print("3. [red]Remove[/] an Expense")
-            print("4. [bold yellow2]Total[/] Expenses")
-            print("5. [bold bright_magenta]Return[/] to main menu\n")
+            print("1.", ":pencil:", "[bold green]Add[/] & [bold cornflower_blue]Save[/] Expense to Text File")
+            print("2.", ":scroll:", "[bold medium_purple]View[/] Expense Entries")
+            print("3.", ":recycle:", " [bold red]Remove[/] an Expense")
+            print("4.",":heavy_plus_sign:", "[bold yellow2]Total[/] Expenses")
+            print("5.", ":runner:", "[bold bright_magenta]Return[/] to main menu\n")
             sub_selection = int(input("Make a choice (1-5): "))
             if sub_selection == 1:
                 add_expense(expense_file_path)
-                return
+                
             elif sub_selection == 2:
                 view_expenses(expense_file_path)
             elif sub_selection == 3:
@@ -204,7 +204,15 @@ def add_expense(file_path):
                 )
             
             save_expense(new_expense_object, file_path)
-            
+            reprompt_expense = input("Would you like to add another expense? (yes/no) ")
+            if reprompt_expense.lower() == "yes":
+                return
+            elif reprompt_expense.lower() == "no":
+                error.print("You will be redirected back to the main menu....", style="error")
+                main()
+            else:
+                print("Select either: (yes/no)")
+
             return new_expense_object
             
 main()
