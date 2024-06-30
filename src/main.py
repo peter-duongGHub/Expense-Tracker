@@ -5,7 +5,9 @@ import re
 import os.path
 
 
+
 def main():
+    
     
     main_menu()
 
@@ -22,30 +24,32 @@ def main():
     # Read list of total expenses
 
 def sub_menu():
-    expense_file_path = "expenses_list.txt"
+    expense_file_path = "expenses_list.csv"
+    
     while True:
         user_selection = int(input("Your selection option please: "))
         if user_selection in range(1, 7):
             if user_selection == 1:
                 print("Starting your Expense Tracking Journey...")
-                add_budget()
+                user_budget = float(input("Please enter your budget: "))
+                print(f"Your budget is ${user_budget:.2f}")
                 print("What would you like to do first?\n")
                 print("Menu: ")
                 print("1. Add & Save Expense to Text File")
                 print("2. View Expense Entries")
                 print("3. Remove an Expense")
-                print("4. Total Expenses by Category")
+                print("4. Total Expenses")
                 print("5. Return to main menu\n")
             sub_selection = int(input("Make a choice (1-5): "))
             if sub_selection == 1:
-                add_expense(expense_file_path)
+                 add_expense(expense_file_path)
             elif sub_selection == 2:
                 view_expenses(expense_file_path)   
             elif sub_selection == 3:
                 remove_expense(expense_file_path)
             elif sub_selection == 4:
-                pass
-            elif sub_selection == 5:
+                total_expenses(expense_file_path, user_budget)
+            elif sub_selection == 6:
                 print("-------------")
                 return f"{main_menu()}"
 
@@ -66,19 +70,34 @@ def main_menu():
     print("3. View Instructions")
     print("4. Exit Program\n")
 
-def add_budget():
-    user_budget = int(input("Please enter your budget: "))
-    new_budget = re.sub(r'(\d{3})(?=\d)' , r'\1,', str(user_budget)[::-1])[::-1]
-    
-    with open("budget.txt", 'a+') as f:
-        f.write(f"${new_budget}\n")
-    print(f"You have entered ${new_budget}")
-    print("Your budget has been added to a list!")
-    return new_budget
 
-def total_expenses():
-    # with open("")
-    pass
+def total_expenses(file_path, user_budget):
+    expenses: list[ExpenseTracker] = []
+    with open(file_path, 'r') as f:
+        lines = f.readlines()
+        for line in lines:  
+            expense_name, expense_amount, expense_location, expense_date, expense_category = line.strip().split(",")
+            total_expense_object = ExpenseTracker(name=expense_name,amount=float(expense_amount),location=expense_location,date=expense_date,category=expense_category)
+            expenses.append(total_expense_object)
+
+        amount_by_category = {}
+        for expense in expenses:
+            key = expense.category
+            if key in amount_by_category:
+                amount_by_category[key] += expense.amount
+            else:
+                amount_by_category[key] = expense.amount
+
+        for key, value in amount_by_category.items():
+            print(f"\n   {key} ${value:.2f}")
+            
+        
+        spending_total = sum([x.amount for x in expenses])
+        print(f"\nYou have spent a total of: ${spending_total:.2f}")
+
+        remaining_budget = user_budget - spending_total
+        print(f"    Your remaining budget: ${remaining_budget:.2f}")
+
     
 def view_expenses(file_path):
     if os.path.exists(file_path):
@@ -126,7 +145,6 @@ def save_expense(new_expense_object:ExpenseTracker, file_path):
         f.write(f"{new_expense_object.name}, {new_expense_object.amount:.2f}, {new_expense_object.location}, {new_expense_object.date}, {new_expense_object.category}\n")
 
 def add_expense(file_path):
-    count = 0
     expense_name = input("Please enter an expense name: ")
     if expense_name.isalpha() and (20 >= len(expense_name) > 0):
         print(f"You have entered {expense_name}")
@@ -179,10 +197,9 @@ def add_expense(file_path):
             category_selection = categories_expense[(user_select) - 1]
             new_expense_object = ExpenseTracker(name=expense_name, amount=expense_amount, category=category_selection, location=expense_location, date=expense_date
                 )
-            count += 1
             
             save_expense(new_expense_object, file_path)
             
-            return
+            return new_expense_object
             
 main()
