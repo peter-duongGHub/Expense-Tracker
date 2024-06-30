@@ -24,14 +24,16 @@ def main():
 
     # Read list of total expenses
 
+
 def sub_menu(user_selection):
     expense_file_path = "expenses_list.csv"
-    while user_selection == 1:
-            console.print("Starting your Expense Tracking Journey...", style="bold underline yellow")
-            user_budget = float(input("Please enter your budget: "))
-            error.print(f"Your budget is ${user_budget:.2f}" , style="success")
-            console.print("[bold purple]What would you like to do first?[/]\n")
-            print("Menu: ")
+    if user_selection == 1:
+        console.print("Starting your Expense Tracking Journey...", style="bold underline yellow")
+        user_budget = float(input("Please enter your budget: "))
+        error.print(f"Your budget is ${user_budget:.2f}" , style="success")
+        while True:
+            console.print("[bold dark_goldenrod]What would you like to do first?[/]\n")
+            console.print("[bold underline orange_red1]Menu:[/] ")
             print("1. [bold green]Add[/] & [bold cornflower_blue]Save[/] Expense to Text File")
             print("2. [bold medium_purple]View[/] Expense Entries")
             print("3. [red]Remove[/] an Expense")
@@ -42,74 +44,70 @@ def sub_menu(user_selection):
                 add_expense(expense_file_path)
                 return
             elif sub_selection == 2:
-                view_expenses(expense_file_path)   
+                view_expenses(expense_file_path)
             elif sub_selection == 3:
                 remove_expense(expense_file_path)
             elif sub_selection == 4:
                 total_expenses(expense_file_path, user_budget)
             elif sub_selection == 5:
                 print("-------------")
-                return f"{main_menu()}"
-
-
-            
+                main()
+                return
 
 
 def main_menu():
-    while True:
-        console.print("\n[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]")
-        print("Choose from the following options (1-4): ")
-        print("\n1. Start Expense Tracker")
-        print("2. View Instructions")
-        print("3. Exit Program\n")
+        console.print("\n:sunglasses:" ,"[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]",":bar_chart:")
+        console.print("[bold yellow]Choose from the following options (1-4):[/] ", ":1234:")
+        console.print("\n""1.",":arrow_forward:", "[bold green]Start[/] Expense Tracker")
+        console.print("2.", ":eyeglasses:","[bold chartreuse3]View[/] Instructions")
+        console.print("3.", ":door:", "[bold red]Exit[/] Program\n")
         user_selection = int(input("Make a selection: "))
         if user_selection == 1:
             return user_selection
         if user_selection == 2:
             pass
         elif user_selection == 3:
-            error.print("Thankyou for trying out Peter's Expense Tracker, till next time!", style="success")
-            break
+            console.print("[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
+            return
         else:
             error.print("Please enter a valid number", style="error")
-            continue
             
-
-
 
 def total_expenses(file_path, user_budget):
-    expenses: list[ExpenseTracker] = []
-    with open(file_path, 'r') as f:
-        lines = f.readlines()
-        for line in lines:  
-            expense_name, expense_amount, expense_location, expense_date, expense_category = line.strip().split(",")
-            total_expense_object = ExpenseTracker(name=expense_name,amount=float(expense_amount),location=expense_location,date=expense_date,category=expense_category)
-            expenses.append(total_expense_object)
+    if os.path.exists(file_path):
+        expenses: list[ExpenseTracker] = []
+        with open(file_path, 'r') as f:
+            lines = f.readlines()
+            for line in lines:  
+                expense_name, expense_amount, expense_location, expense_date, expense_category = line.strip().split(",")
+                total_expense_object = ExpenseTracker(name=expense_name,amount=float(expense_amount),location=expense_location,date=expense_date,category=expense_category)
+                expenses.append(total_expense_object)
 
-        amount_by_category = {}
-        for expense in expenses:
-            key = expense.category
-            if key in amount_by_category:
-                amount_by_category[key] += expense.amount
-            else:
-                amount_by_category[key] = expense.amount
+            amount_by_category = {}
+            for expense in expenses:
+                key = expense.category
+                if key in amount_by_category:
+                    amount_by_category[key] += expense.amount
+                else:
+                    amount_by_category[key] = expense.amount
 
-        for key, value in amount_by_category.items():
-            error.print(f"\n   {key} ${value:.2f}", style="success")
+            for key, value in amount_by_category.items():
+                error.print(f"\n   {key} ${value:.2f}", style="success")
+                
             
-        
-        spending_total = sum([x.amount for x in expenses])
-        error.print(f"\nYou have spent a total of: ${spending_total:.2f}", style="success")
+            spending_total = sum([x.amount for x in expenses])
+            error.print(f"\nYou have spent a total of: ${spending_total:.2f}", style="success")
 
-        remaining_budget = user_budget - spending_total
-        error.print(f"    Your remaining budget: ${remaining_budget:.2f}", style="success")
-
+            remaining_budget = user_budget - spending_total
+            error.print(f"    Your remaining budget: ${remaining_budget:.2f}", style="success")
+    else:
+        error.print("You have no expense entries to sum", style="error")
     
 def view_expenses(file_path):
     if os.path.exists(file_path):
         view_expense = input("Would you like to view your expense entries? (yes/no): ")
         if view_expense.isalpha() and view_expense.lower() == "yes":  
-            with open("expenses_list.txt", "r") as f:
+            with open("expenses_list.csv", "r") as f:
                 listed_expense = f.readlines()
                 for i, expense in enumerate(listed_expense):
                     print(f"{i+1}. {expense}".strip())
@@ -118,6 +116,7 @@ def view_expenses(file_path):
             error.print("You have selected not to view your entries!", style="error")
     else: 
         error.print("You currently have no expense entries", style="error" )
+
 
     
 
@@ -131,7 +130,7 @@ def remove_expense(file_path):
         if os.path.exists(file_path):
             with open(file_path, 'r') as f:
                 lines = f.readlines()
-                view_expenses()
+                view_expenses(file_path)
                 delete_line = int(input("Which expense entry would you like to delete? "))
                 lineindex = 1
                 with open(file_path, 'w') as f:
