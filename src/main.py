@@ -53,11 +53,14 @@ def sub_menu(user_selection):
                 print("-------------")
                 main()
                 return
+            else:
+                error.print("Please select a number between (1-5)", style="error")
 
 
 def main_menu():
+    while True:
         console.print("\n:sunglasses:" ,"[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]",":bar_chart:")
-        console.print("[bold yellow]Choose from the following options (1-4):[/] ", ":1234:")
+        console.print("[bold yellow]Choose from the following options (1-4):[/]",":1234:")
         console.print("\n""1.",":arrow_forward:", "[bold green]Start[/] Expense Tracker")
         console.print("2.", ":eyeglasses:","[bold chartreuse3]View[/] Instructions")
         console.print("3.", ":door:", "[bold red]Exit[/] Program\n")
@@ -68,9 +71,10 @@ def main_menu():
             pass
         elif user_selection == 3:
             console.print("[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
-            return
+            break
         else:
             error.print("Please enter a valid number", style="error")
+            continue
             
 
 def total_expenses(file_path, user_budget):
@@ -208,8 +212,8 @@ def add_expense(file_path):
             if reprompt_expense.lower() == "yes":
                 return
             elif reprompt_expense.lower() == "no":
-                error.print("You will be redirected back to the main menu....", style="error")
-                main()
+                error.print("You will be redirected back to the sub menu....", style="error")
+                return
             else:
                 print("Select either: (yes/no)")
 
