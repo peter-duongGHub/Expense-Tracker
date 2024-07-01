@@ -29,8 +29,16 @@ def sub_menu(user_selection):
     expense_file_path = "expenses_list.csv"
     if user_selection == 1:
         console.print("Starting your Expense Tracking Journey...", style="bold underline yellow")
-        user_budget = float(input("Please enter your budget: "))
-        error.print(f"Your budget is ${user_budget:.2f}" , style="success")
+        while True:
+            user_budget = float(input("Please enter your budget: "))
+            if user_budget <= 0:
+                error.print("\nPlease enter a valid number\n", style="error")
+                continue
+            else:
+                error.print(f"Your budget is ${user_budget:.2f}" , style="success")
+                break
+        
+        
         while True:
             console.print("[bold dark_goldenrod]What would you like to do first?[/]\n")
             console.print("[bold underline orange_red1]Menu:[/] ")
