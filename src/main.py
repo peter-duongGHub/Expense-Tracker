@@ -17,7 +17,7 @@ def main():
 
 
 
-
+/......................//
     # Get user input for Expense(s) including: Name, Amount, Category, Location, Date    
     # Append the expense to a file
 
@@ -91,8 +91,8 @@ def total_expenses(file_path, user_budget):
         with open(file_path, 'r') as f:
             lines = f.readlines()
             for line in lines:  
-                expense_name, expense_amount, expense_location, expense_date, expense_category = line.strip().split(",")
-                total_expense_object = ExpenseTracker(name=expense_name,amount=float(expense_amount),location=expense_location,date=expense_date,category=expense_category)
+                expense_name, expense_amount, expense_date, expense_category = line.strip().split(",")
+                total_expense_object = ExpenseTracker(name=expense_name,amount=float(expense_amount),date=expense_date,category=expense_category)
                 expenses.append(total_expense_object)
 
             amount_by_category = {}
@@ -123,9 +123,14 @@ def view_expenses(file_path):
                 listed_expense = f.readlines()
                 for i, expense in enumerate(listed_expense):
                     print(f"{i+1}. {expense}".strip())
+
                 return
-        else:
+        elif view_expense.lower() == "no":
             error.print("You have selected not to view your entries!", style="error")
+            return
+
+        else:
+            error.print("Please enter a valid answer",style="error")
     else: 
         error.print("You currently have no expense entries", style="error" )
 
@@ -159,72 +164,71 @@ def remove_expense(file_path):
 def save_expense(new_expense_object:ExpenseTracker, file_path):
     error.print(f"Saving your expense.... {new_expense_object} to {file_path}", style="success")
     with open(file_path, "a+") as f:
-        f.write(f"{new_expense_object.name}, {new_expense_object.amount:.2f}, {new_expense_object.location}, {new_expense_object.date}, {new_expense_object.category}\n")
+        f.write(f"{new_expense_object.name}, {new_expense_object.amount:.2f}, {new_expense_object.date}, {new_expense_object.category}\n")
 
 def add_expense(file_path):
-    expense_name = input("Please enter an expense name: ")
-    if expense_name.isalpha() and (20 >= len(expense_name) > 0):
-        error.print(f"You have entered {expense_name}", style="success")
-        expense_name = expense_name.capitalize()
-    else:
-        error.print("Please type a valid name", style="error") 
-
-    expense_amount = float(input("Please enter an expense amount: "))
-        
-    if expense_amount == 0:
-        error.print("You cannot have an expense of 0 amount! Please try again: ", style="error")
-    else:
-        error.print(f"You have entered {expense_amount:.2f}", style="success")
-
-        expense_location = input("Please enter location of expense: ")
-        expense_location = expense_location.upper()
-        if not expense_location.isalpha():
-            print("Please enter a valid location: ", style="error")
-        else:
-            error.print(f"You have entered {expense_location}", style="success")
-
-        expense_date = (input("Please enter a date in format YYYY-MM-DD: "))
-        if datetime.date.fromisoformat(expense_date):
-            error.print(f"You have entered {expense_date}", style="success")
-        else:
-            error.print("Invalid date entered, please enter a valid date!", style="error")
-
-    categories_expense = [
-    "Food", 
-    "Bills", 
-    "Rent", 
-    "Car", 
-    "Education", 
-    "Miscellaneous"
-        ]
-        
-        
     while True:
-        console.print("[bold yellow]Select a category from the following options: [/]")
-        for i, category in enumerate(categories_expense):
-            error.print(f"{i + 1}. {category}", style="success")
-        user_select = int(input("Your chosen category number? "))
-
-        if user_select not in range(1, (len(categories_expense) + 1)):
-            error.print("Please select a valid category number: ", style="error")
-            continue
-            
+        expense_name = input("Please enter an expense name: ")
+        if expense_name.isalpha() and (20 >= len(expense_name) > 0):
+            error.print(f"You have entered {expense_name}", style="success")
+            expense_name = expense_name.capitalize()
         else:
-            error.print(f"You have selected {user_select}: {categories_expense[user_select - 1]} ", style="success")
-            category_selection = categories_expense[(user_select) - 1]
-            new_expense_object = ExpenseTracker(name=expense_name, amount=expense_amount, category=category_selection, location=expense_location, date=expense_date
-                )
-            
-            save_expense(new_expense_object, file_path)
-            reprompt_expense = input("Would you like to add another expense? (yes/no) ")
-            if reprompt_expense.lower() == "yes":
-                return
-            elif reprompt_expense.lower() == "no":
-                error.print("You will be redirected back to the sub menu....", style="error")
-                return
-            else:
-                print("Select either: (yes/no)")
+            error.print("Please type a valid name", style="error")
+            continue 
 
-            return new_expense_object
-            
+        expense_amount = float(input("Please enter an expense amount: "))
+
+        while True:        
+            if expense_amount == 0:
+                error.print("You cannot have an expense of 0 amount! Please try again: ", style="error")
+                continue
+            else:
+                error.print(f"You have entered {expense_amount:.2f}", style="success")
+                
+
+            while True: 
+                expense_date = (input("Please enter a date in format YYYY-MM-DD: "))
+                if datetime.date.fromisoformat(expense_date):
+                    error.print(f"You have entered {expense_date}", style="success")
+                else:
+                    error.print("Invalid date entered, please enter a valid date!", style="error")
+                    continue
+
+                categories_expense = [
+                "Food", 
+                "Bills", 
+                "Rent", 
+                "Car", 
+                "Education", 
+                "Miscellaneous"
+                    ]
+                    
+                    
+                while True:
+                    console.print("[bold yellow]Select a category from the following options: [/]")
+                    for i, category in enumerate(categories_expense):
+                        error.print(f"{i + 1}. {category}", style="success")
+                    user_select = int(input("Your chosen category number? "))
+
+                    if user_select not in range(1, (len(categories_expense) + 1)):
+                        error.print("Please select a valid category number: ", style="error")
+                        continue
+                        
+                    else:
+                        error.print(f"You have selected {user_select}: {categories_expense[user_select - 1]} ", style="success")
+                        category_selection = categories_expense[(user_select) - 1]
+                        new_expense_object = ExpenseTracker(name=expense_name, amount=expense_amount, category=category_selection, date=expense_date
+                            )
+                        
+                        save_expense(new_expense_object, file_path)
+                        reprompt_expense = input("Would you like to add another expense? (yes/no) ")
+                        if reprompt_expense.lower() == "yes" or reprompt_expense.lower() == "no":
+                            error.print("You will be redirected back to the sub menu....", style="error")
+                            return
+        
+                        else:
+                            error.print("Select either: (yes/no)", style="error")
+
+                        return new_expense_object
+                    
 main()
