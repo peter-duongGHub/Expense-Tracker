@@ -1,4 +1,4 @@
-from expenses import ExpenseTracker
+```from expenses import ExpenseTracker
 import datetime
 import os.path
 from rich import print
@@ -17,7 +17,6 @@ def main():
 
 
 
-/......................//
     # Get user input for Expense(s) including: Name, Amount, Category, Location, Date    
     # Append the expense to a file
 
@@ -232,3 +231,4 @@ def add_expense(file_path):
                         return new_expense_object
                     
 main()
+```

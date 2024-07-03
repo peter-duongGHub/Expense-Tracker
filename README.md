@@ -77,4 +77,9 @@
 
 ## Algorithms and 
 
+## Python Styling Guide
+My chosen styling guide is PEP 8 – Style Guide for Python Code [PEP-8](https://peps.python.org/pep-0008/). My terminal application will adhere to PEP 8, a commonly used styling guide within Python(van Rossum, Warsaw and Coghlan, 2001). (Write a few paragraphs about PEP8)
+
 ## References
+- van Rossum, G., Warsaw, B. and Coghlan, N. (2001). PEP 8 – Style Guide for Python Code. [online] peps.python.org. Available at: https://peps.python.org/pep-0008/.
+- GeeksforGeeks. (2020). Python - Conventions and PEP8. [online] Available at: https://www.geeksforgeeks.org/python-conventions-and-pep8/.
