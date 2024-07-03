@@ -10,6 +10,28 @@
 
 ### Users may add expenses
 - Users may input expenses including expense name, amount, date, location & category. These expenses will be saved to a CSV file
+### How Users will add expenses
+Users will first be prompted at the main menu to select 1 of 3 options. 
+- Execute Peter's Expense tracking application
+Selecting 1. to execute the application program will send users to a sub menu where users will be prompted to choose from options 1 to 5. 
+1. Add & Save Expenses to a CSV File
+
+After selecting Option 1 within the sub menu, users will be made to enter a while loop with condition "True". 
+
+
+2. View Expenses
+3. Remove a Specific Expense from a list
+4. Total Expenses, Total based on Category and Subtraction of Expenses from User Inputted Budget
+5. Return to Main Menu
+  
+
+- View Instructions on how to operate Peter's Expense tracking application
+- Exit the Program
+
+
+be included in a while loop condition after selecting option  
+"1. Add & Save expense to CSV file"
+
 
 ### Describe Adding Expenses providing a walkthrough of the logic of the application
 - 
@@ -37,6 +59,7 @@
 ### Describe Adding Expenses providing a walkthrough of the logic of the application
 
 
+
 ## Ensured understanding of 
 ### Variables and scope (use of and understanding)
 - Screenshots
@@ -62,7 +85,7 @@
 > Your checklists for each feature should have at least 5 items.
 
 
-## Help Documentation
+## Help Documentation (Extensive run down and system requirements)
 -  includes a set of instructions which accurately describe how to use and install the application.
 - steps to install the application
 - any dependencies required by the application to operate
