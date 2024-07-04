@@ -66,18 +66,20 @@ def add_expense_date():
 
 
 def add_expense_name():
-    try:
-        while True:
+    while True:
+        try:
             expense_name = input("Please enter an expense name: ")
             if expense_name.isalpha() and (20 >= len(expense_name) > 0):
                 error.print(f"You have entered {expense_name}", style="success")
                 expense_name = expense_name.capitalize()
                 return expense_name
             else:
-                error.print("Invalid input. Please enter a valid name including only letters!", style="error")
+                error.print(f"Invalid input. Please enter a valid name including only letters!", style="error")
                 continue
-    except Exception as e:
-        print(f"Invalid input. Please enter a valid name including only letters!: {e}")
+
+        except Exception as e:
+            error.print(f"Invalid input. Please enter a valid name including only letters!: {e}", style="error")
+            continue
 
 
 
