@@ -1,10 +1,10 @@
 # Expense Tracker
 
-## Link to Source Control Repository
+## Link to Source Control Repository & Screenshot
 [GitHub-Repository](https://github.com/peter-duongGHub?tab=repositories)
+### Screenshot of provided link: 
 
-## Code Style Guide 
-
+![GitHub-Screenshot](./docs/GitHubRepository.PNG)
 
 ## List of Features (at least three):
 
@@ -96,12 +96,18 @@ be included in a while loop condition after selecting option
 
 ## Trello
 
-## Pseudocode
 
-## Algorithms and 
+## Algorithms 
 
 ## Python Styling Guide
-My chosen styling guide is PEP 8 – Style Guide for Python Code [PEP-8](https://peps.python.org/pep-0008/). My terminal application will adhere to PEP 8, a commonly used styling guide within Python(van Rossum, Warsaw and Coghlan, 2001). (Write a few paragraphs about PEP8)
+My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
+
+### Screenshot of AutoPEP8 Used for Expense Tracking Application: 
+![Auto-Pep8](./docs/AutoPep8.PNG)
+
+The chosen styling guide may be found at: [PEP8](https://peps.python.org/pep-0008/).  
+### Screenshot of provided link: 
+![PEP8-Screenshot](./docs/PEP8.PNG)
 
 ## References
 - van Rossum, G., Warsaw, B. and Coghlan, N. (2001). PEP 8 – Style Guide for Python Code. [online] peps.python.org. Available at: https://peps.python.org/pep-0008/.

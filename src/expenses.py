@@ -10,7 +10,7 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 
-class ExpenseTracker:
+class Expenses:
     def __init__(self, name, amount, date, category):
         self.name = name
         self.amount = amount
@@ -32,36 +32,52 @@ def add_expense_category(expense_name, expense_amount, expense_date):
     ]
 
     while True:
-        console.print(
-            "[bold yellow]Select a category from the following options: [/]")
-        for i, category in enumerate(categories_expense):
-            error.print(f"{i + 1}. {category}", style="success")
+        try:
+            console.print(
+                "[bold yellow]Select a category from the following options: [/]")
+            for i, category in enumerate(categories_expense):
+                error.print(f"{i + 1}. {category}", style="success")
 
-        user_select = int(input("Your chosen category number? "))
+            user_select = int(input("Your chosen category number? "))
 
-        if user_select not in range(1, (len(categories_expense) + 1)):
-            error.print("Please select a valid category number: ",
-                        style="error")
+            if user_select not in range(1, (len(categories_expense) + 1)):
+                error.print("Please select a valid category number: ",
+                            style="error")
+                continue
+
+            else:
+                error.print(
+                    f"You have selected {user_select}: {categories_expense[user_select - 1]} ", style="success")
+                category_selection = categories_expense[(user_select) - 1]
+                new_expense_object = Expenses(
+                    name=expense_name, amount=expense_amount, category=category_selection, date=expense_date)
+                return new_expense_object
+        except ValueError as e:
+            print(f"Please enter an integer value (1-6): {e}", style="error")
             continue
-
-        else:
+        except Exception as e:
             error.print(
-                f"You have selected {user_select}: {categories_expense[user_select - 1]} ", style="success")
-            category_selection = categories_expense[(user_select) - 1]
-            new_expense_object = ExpenseTracker(
-                name=expense_name, amount=expense_amount, category=category_selection, date=expense_date)
-            return new_expense_object
+                f"Please enter an integer value (1-6): {e}", style="error")
+            continue
 
 
 def add_expense_date():
     while True:
-        expense_date = (input("Please enter a date in format YYYY-MM-DD: "))
-        if datetime.date.fromisoformat(expense_date):
-            error.print(f"You have entered {expense_date}", style="success")
-            return expense_date
-        else:
+        try:
+            expense_date = (
+                input("Please enter a date in format YYYY-MM-DD: "))
+            if datetime.date.fromisoformat(expense_date):
+                error.print(
+                    f"You have entered {expense_date}", style="success")
+                return expense_date
+            else:
+                error.print(
+                    "Invalid date entered, please enter a valid date!", style="error")
+                continue
+
+        except Exception as e:
             error.print(
-                "Invalid date entered, please enter a valid date!", style="error")
+                f"Invalid date entered, please enter a valid date!", style="error")
             continue
 
 
@@ -70,20 +86,22 @@ def add_expense_name():
         try:
             expense_name = input("Please enter an expense name: ")
             if expense_name.isalpha() and (20 >= len(expense_name) > 0):
-                error.print(f"You have entered {expense_name}", style="success")
+                error.print(
+                    f"You have entered {expense_name}", style="success")
                 expense_name = expense_name.capitalize()
                 return expense_name
             else:
-                error.print(f"Invalid input. Please enter a valid name including only letters!", style="error")
+                error.print(
+                    f"Invalid input. Please enter a valid name including only letters!", style="error")
                 continue
 
         except Exception as e:
-            error.print(f"Invalid input. Please enter a valid name including only letters!: {e}", style="error")
+            error.print(
+                f"Invalid input. Please enter a valid name including only letters!: {e}", style="error")
             continue
 
 
-
-def save_expense(new_expense_object: ExpenseTracker, file_path):
+def save_expense(new_expense_object: Expenses, file_path):
     error.print(
         f"Saving your expense.... {new_expense_object} to {file_path}", style="success")
     with open(file_path, "a+") as f:
@@ -92,7 +110,7 @@ def save_expense(new_expense_object: ExpenseTracker, file_path):
 
 def add_expense_amount():
     while True:
-        try: 
+        try:
             expense_amount = float(input("Please enter an expense amount: "))
             if expense_amount <= 0:
                 error.print(
@@ -103,11 +121,14 @@ def add_expense_amount():
                     f"You have entered {expense_amount:.2f}", style="success")
                 return expense_amount
         except ValueError as e:
-            error.print(f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
+            error.print(
+                f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
             continue
         except Exception as e:
-            error.print(f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
+            error.print(
+                f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
             continue
+
 
 def view_expenses(file_path):
     if os.path.exists(file_path):
@@ -135,12 +156,12 @@ def view_expenses(file_path):
 
 def total_expenses(file_path, user_budget):
     if os.path.exists(file_path):
-        expenses: list[ExpenseTracker] = []
+        expenses: list[Expenses] = []
         with open(file_path, 'r') as f:
             lines = f.readlines()
             for line in lines:
                 expense_name, expense_amount, expense_date, expense_category = line.strip().split(",")
-                total_expense_object = ExpenseTracker(name=expense_name, amount=float(
+                total_expense_object = Expenses(name=expense_name, amount=float(
                     expense_amount), date=expense_date, category=expense_category)
                 expenses.append(total_expense_object)
 
@@ -210,6 +231,7 @@ def exit_program():
             sys.exit("You have exited the program")
         else:
             print("Please input either yes or no")
+
 
 def main_menu():
     while True:

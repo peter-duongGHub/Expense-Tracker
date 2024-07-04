@@ -1,4 +1,4 @@
-from expenses import ExpenseTracker
+from expenses import Expenses
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
@@ -65,6 +65,7 @@ def sub_menu(user_selection):
             else:
                 error.print("Please select a number between (1-5)",
                             style="error")
+
 
 if __name__ == "__main__":
     main()
