@@ -66,15 +66,19 @@ def add_expense_date():
 
 
 def add_expense_name():
-    while True:
-        expense_name = input("Please enter an expense name: ")
-        if expense_name.isalpha() and (20 >= len(expense_name) > 0):
-            error.print(f"You have entered {expense_name}", style="success")
-            expense_name = expense_name.capitalize()
-            return expense_name
-        else:
-            error.print("Please type a valid name", style="error")
-            continue
+    try:
+        while True:
+            expense_name = input("Please enter an expense name: ")
+            if expense_name.isalpha() and (20 >= len(expense_name) > 0):
+                error.print(f"You have entered {expense_name}", style="success")
+                expense_name = expense_name.capitalize()
+                return expense_name
+            else:
+                error.print("Invalid input. Please enter a valid name including only letters!", style="error")
+                continue
+    except Exception as e:
+        print(f"Invalid input. Please enter a valid name including only letters!: {e}")
+
 
 
 def save_expense(new_expense_object: ExpenseTracker, file_path):
@@ -86,16 +90,22 @@ def save_expense(new_expense_object: ExpenseTracker, file_path):
 
 def add_expense_amount():
     while True:
-        expense_amount = float(input("Please enter an expense amount: "))
-        if expense_amount <= 0:
-            error.print(
-                "You cannot have an expense amount 0 or lower Please try again: ", style="error")
+        try: 
+            expense_amount = float(input("Please enter an expense amount: "))
+            if expense_amount <= 0:
+                error.print(
+                    "You cannot have an expense amount 0 or lower Please try again: ", style="error")
+                continue
+            elif expense_amount > 0:
+                error.print(
+                    f"You have entered {expense_amount:.2f}", style="success")
+                return expense_amount
+        except ValueError as e:
+            error.print(f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
             continue
-        else:
-            error.print(
-                f"You have entered {expense_amount:.2f}", style="success")
-            return expense_amount
-
+        except Exception as e:
+            error.print(f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
+            continue
 
 def view_expenses(file_path):
     if os.path.exists(file_path):

@@ -66,8 +66,5 @@ def sub_menu(user_selection):
                 error.print("Please select a number between (1-5)",
                             style="error")
 
-
-
-
-
-main()
+if __name__ == "__main__":
+    main()
