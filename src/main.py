@@ -54,6 +54,7 @@ def sub_menu(user_selection):
                 expense_date = add_expense_date()
                 new_expense_object = add_expense_category(expense_name, expense_amount, expense_date)
                 save_expense(new_expense_object, expense_file_path)
+                exit_program()
             elif sub_selection == 2:
                 view_expenses(expense_file_path)
             elif sub_selection == 3:
@@ -118,6 +119,7 @@ def add_expense_category(expense_name,expense_amount, expense_date):
         console.print("[bold yellow]Select a category from the following options: [/]")
         for i, category in enumerate(categories_expense):
             error.print(f"{i + 1}. {category}", style="success")
+
         user_select = int(input("Your chosen category number? "))
 
         if user_select not in range(1, (len(categories_expense) + 1)):
@@ -151,7 +153,7 @@ def add_expense_name():
             return expense_name
         else:
             error.print("Please type a valid name", style="error")
-            continue 
+            continue
 
 def save_expense(new_expense_object:ExpenseTracker, file_path):
     error.print(f"Saving your expense.... {new_expense_object} to {file_path}", style="success")
@@ -171,21 +173,22 @@ def add_expense_amount():
 
 def view_expenses(file_path):
     if os.path.exists(file_path):
-        view_expense = input("Would you like to view your expense entries? (yes/no): ")
-        if view_expense.lower() == "yes":  
-            with open("expenses_list.csv", "r") as f:
-                expense_list = f.readlines()
-                for i, expense in enumerate(expense_list):
-                    print(f"{i+1}. {expense}".strip())
+        while True:
+            view_expense = input("Would you like to view your expense entries? (yes/no): ")
+            if view_expense.lower() == "yes":  
+                with open("expenses_list.csv", "r") as f:
+                    expense_list = f.readlines()
+                    for i, expense in enumerate(expense_list):
+                        print(f"{i+1}. {expense}".strip())
 
-                exit_program()
+                    exit_program()
 
-        elif view_expense.lower() == "no":
-            error.print("You have selected not to view your entries!", style="error")
-            return
+            elif view_expense.lower() == "no":
+                error.print("You have selected not to view your entries!", style="error")
+                return
 
-        else:
-            error.print("Please enter a valid answer",style="error")
+            else:
+                error.print("Please enter a valid answer",style="error")
     else: 
         error.print("You currently have no expense entries", style="error" )
 
@@ -238,26 +241,32 @@ def remove_expense(file_path):
                 for i, line in enumerate(lines):
                     print(f"{i+1}. {line}".strip())
                 user_delete = int(input("Which expense entry would you like to delete? "))
-                index = 1
                 with open(file_path, 'w') as f:
+                    index = 1
                     for line in lines:
                         if index != user_delete:
-                            f.write(line)   
+                            f.write(line)  
+                            
+                        else:
+                            error.print(f"You have successfully deleted entry {user_delete}", style="success")
+
                         index += 1
 
-            error.print(f"You have successfully deleted entry {user_delete}", style="success")
             exit_program()
             
         else:
             error.print("You do not currently have any expense entries to remove! ", style="error")
 
 def exit_program():
-    reprompt = input("Would you like to add more expenses? (yes/no): ")
-    if reprompt.lower() == "yes":
-        return
-    elif reprompt.lower() == "no":
-        sys.exit("You have exited the program")
-    else:
-        print("Please input either yes or no")
+    while True:
+        reprompt = input("Would you like to add more expenses? (yes/no): ")
+        if reprompt.lower() == "yes":
+            return
+        elif reprompt.lower() == "no":
+            sys.exit("You have exited the program")
+        else:
+            print("Please input either yes or no")
+    
+    
 
 main()

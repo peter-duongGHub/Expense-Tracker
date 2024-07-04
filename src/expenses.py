@@ -6,6 +6,6 @@ class ExpenseTracker:
         self.category = category
 
     def __repr__(self):
-        return f"<{self.name}, {self.amount:.2f}, {self.date}, {self.category}>"
+        return f"{self.name}, {self.amount:.2f}, {self.date}, {self.category}"
 
 
