@@ -2,7 +2,7 @@ from expenses import ExpenseTracker
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
-from expenses import add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program
+from expenses import add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
 
 # Initialise
 console = Console()
@@ -67,29 +67,7 @@ def sub_menu(user_selection):
                             style="error")
 
 
-def main_menu():
-    while True:
-        console.print(
-            "\n:sunglasses:", "[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]", ":bar_chart:")
-        console.print(
-            "[bold yellow]Choose from the following options (1-4):[/]", ":1234:")
-        console.print("\n""1.", ":arrow_forward:",
-                      "[bold green]Start[/] Expense Tracker")
-        console.print("2.", ":eyeglasses:",
-                      "[bold chartreuse3]View[/] Instructions")
-        console.print("3.", ":door:", "[bold red]Exit[/] Program\n")
-        user_selection = int(input("Make a selection: "))
-        if user_selection == 1:
-            return user_selection
-        if user_selection == 2:
-            pass
-        elif user_selection == 3:
-            console.print(
-                "[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
-            break
-        else:
-            error.print("Please enter a valid number", style="error")
-            continue
+
 
 
 main()

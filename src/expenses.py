@@ -9,6 +9,7 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 class ExpenseTracker:
     def __init__(self, name, amount, date, category):
         self.name = name
@@ -18,7 +19,6 @@ class ExpenseTracker:
 
     def __repr__(self):
         return f"{self.name}, {self.amount:.2f}, {self.date}, {self.category}"
-
 
 
 def add_expense_category(expense_name, expense_amount, expense_date):
@@ -199,3 +199,26 @@ def exit_program():
         else:
             print("Please input either yes or no")
 
+def main_menu():
+    while True:
+        console.print(
+            "\n:sunglasses:", "[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]", ":bar_chart:")
+        console.print(
+            "[bold yellow]Choose from the following options (1-4):[/]", ":1234:")
+        console.print("\n""1.", ":arrow_forward:",
+                      "[bold green]Start[/] Expense Tracker")
+        console.print("2.", ":eyeglasses:",
+                      "[bold chartreuse3]View[/] Instructions")
+        console.print("3.", ":door:", "[bold red]Exit[/] Program\n")
+        user_selection = int(input("Make a selection: "))
+        if user_selection == 1:
+            return user_selection
+        if user_selection == 2:
+            pass
+        elif user_selection == 3:
+            console.print(
+                "[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
+            break
+        else:
+            error.print("Please enter a valid number", style="error")
+            continue
