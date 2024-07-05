@@ -150,9 +150,20 @@ def view_expenses(file_path):
 
             else:
                 error.print("Please enter a valid answer", style="error")
+                continue
     else:
         error.print("You currently have no expense entries", style="error")
 
+def add_budget():
+    while True:
+        user_budget = float(input("Please enter your budget: "))
+        if user_budget <= 0:
+            error.print("\nPlease enter a valid number\n", style="error")
+            continue
+        else:
+            error.print(
+            f"Your budget is ${user_budget:.2f}", style="success")
+            return user_budget
 
 def total_expenses(file_path, user_budget):
     if os.path.exists(file_path):
@@ -188,6 +199,7 @@ def total_expenses(file_path, user_budget):
 
     else:
         error.print("You have no expense entries to sum", style="error")
+        return
 
     # Remove files
 

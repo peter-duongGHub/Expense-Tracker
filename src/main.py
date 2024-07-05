@@ -2,7 +2,7 @@ from expenses import Expenses
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
-from expenses import add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
+from expenses import add_budget,add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
 
 # Initialise
 console = Console()
@@ -21,15 +21,7 @@ def sub_menu(user_selection):
     if user_selection == 1:
         console.print("Starting your Expense Tracking Journey...",
                       style="bold underline yellow")
-        while True:
-            user_budget = float(input("Please enter your budget: "))
-            if user_budget <= 0:
-                error.print("\nPlease enter a valid number\n", style="error")
-                continue
-            else:
-                error.print(
-                    f"Your budget is ${user_budget:.2f}", style="success")
-                break
+        user_budget = add_budget()
 
         while True:
             console.print(

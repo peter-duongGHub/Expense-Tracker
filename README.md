@@ -77,6 +77,11 @@ be included in a while loop condition after selecting option
 
 ## Implementation Plan (Project management platform to track this plan - Trello)
 ### Outline each feature implementation and checklist of tasks for each feature
+[TrelloBoard-Feature1](./docs/Trello_Feature1.PNG)
+[TrelloBoard-Feature2](./docs/Trello_Feature1.PNG)
+[TrelloBoard-Feature3](./docs/Trello_Feature1.PNG)
+[TrelloBoard-Feature4](./docs/Trello_Feature1.PNG)
+
 
 ### Prioritise implementation of different features, checklist items within a feature
 
@@ -95,14 +100,18 @@ be included in a while loop condition after selecting option
 
 
 ## Trello
+### Link to Trello 
+[TrelloBoard-Link](https://trello.com/b/f3oIGayB/t1a3-expense-tracker)
 
+### Screenshot of Trello (Project Management Platform) - Track Implementation Plan
+![TrelloBoard](./docs/TrelloFinal.PNG)
 
 ## Algorithms 
 
 ## Python Styling Guide
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
 
-### Screenshot of AutoPEP8 Used for Expense Tracking Application: 
+### Screenshot of AutoPEP8 Used for Expense Tracking Application all files.
 ![Auto-Pep8](./docs/AutoPep8.PNG)
 
 The chosen styling guide may be found at: [PEP8](https://peps.python.org/pep-0008/).  
