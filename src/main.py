@@ -2,7 +2,7 @@ from expenses import Expenses
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
-from expenses import add_budget,add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
+from expenses import add_budget, add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
 
 # Initialise
 console = Console()

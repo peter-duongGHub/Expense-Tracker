@@ -154,16 +154,27 @@ def view_expenses(file_path):
     else:
         error.print("You currently have no expense entries", style="error")
 
+
 def add_budget():
     while True:
-        user_budget = float(input("Please enter your budget: "))
-        if user_budget <= 0:
-            error.print("\nPlease enter a valid number\n", style="error")
+        try:
+            user_budget = float(input("Enter your budget: "))
+            if user_budget <= 0:
+                error.print("\nPlease enter a valid number\n", style="error")
+                continue
+            elif user_budget > 0:
+                error.print(
+                    f"Your budget is ${user_budget:.2f}", style="success")
+                return user_budget
+        except ValueError as e:
+            error.print(f"Please enter a valid input: {e}\n", style="error")
             continue
-        else:
-            error.print(
-            f"Your budget is ${user_budget:.2f}", style="success")
-            return user_budget
+        except Exception as e:
+            print(f"Please enter a valid input: {e}", style="error")
+            continue
+
+
+
 
 def total_expenses(file_path, user_budget):
     if os.path.exists(file_path):
@@ -250,18 +261,14 @@ def main_menu():
         console.print(
             "\n:sunglasses:", "[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]", ":bar_chart:")
         console.print(
-            "[bold yellow]Choose from the following options (1-4):[/]", ":1234:")
+            "[bold yellow]Choose from the following options (1-2):[/]", ":1234:")
         console.print("\n""1.", ":arrow_forward:",
                       "[bold green]Start[/] Expense Tracker")
-        console.print("2.", ":eyeglasses:",
-                      "[bold chartreuse3]View[/] Instructions")
-        console.print("3.", ":door:", "[bold red]Exit[/] Program\n")
+        console.print("2.", ":door:", "[bold red]Exit[/] Program\n")
         user_selection = int(input("Make a selection: "))
         if user_selection == 1:
             return user_selection
         if user_selection == 2:
-            pass
-        elif user_selection == 3:
             console.print(
                 "[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
             break

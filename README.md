@@ -6,7 +6,91 @@
 
 ![GitHub-Screenshot](./docs/GitHubRepository.PNG)
 
-## List of Features (at least three):
+## Help Documentation - Steps, Dependencies, System/Hardware Requirements, Command Line Arguments for application
+This help documentation will include a comprehensive guide on how to run Peter's Expense Tracker on Windows, Linux and Mac.
+
+### Step 1 - Python Installation
+Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. 
+[Python-Download](https://www.python.org/downloads/)
+![Python-Download-Screenshot](./docs/DownloadPython.PNG)
+
+### Step 2 - Text Editor or IDE
+Users must then download a text editor such as Visual Studio Code or IDE such as PyCharm to run the terminal application. Links of both Visual Studio Code and PyCharm are listed below. 
+
+[Visual-Studio-Code](https://code.visualstudio.com/download)
+![Visual-Studio-Code-Screenshot](./docs/VSCode.PNG)
+
+[PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)
+![PyCharm](./docs/PyCharm.PNG)
+
+### Step 3 - Installation of Pip
+Users must check if they have Pip installed. A link to installing pip is provided below.  
+[Pip-Install](https://pip.pypa.io/en/stable/installation/)
+![Pip-Install](./docs/PipInstall.PNG)
+
+### Step 4 - Extract Zip File
+Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application.
+
+
+
+Required packages that have been installed for my python terminal application will be located in a file named requirements.txt. This will include:
+- rich
+- pyinstaller
+- pytest
+
+## Expense Tracker
+- To use the terminal application users must change directory to src directory. Within Ubuntu for Windows or for linux, typing the below snippet will help direct users to the correct directory for execution of the application.     
+```cd src``` 
+
+- To automate the process, an executable .sh file has been created to help users install required dependencies, software automate the terminal application. The executable script is run by typing the below inside a terminal application. 
+```./expense_tracker_script.sh```
+
+## List of Features (at least three) & Implementation Plan
+
+### Feature 1 TrelloBoard - Add & Save Expenses (Checklist of tasks for feature 1)
+![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)
+
+### Feature 1 TrellBoard Checklist Items - Add & Save Expenses 
+![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
+![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)
+
+
+### Feature 2 TrelloBoard - View and Remove Expenses (Checklist of tasks for feature 1)
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2.PNG)
+
+### Feature 2 TrelloBoard Checklist Items - View and Remove Expenses
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)
+
+### Feature 3 TrelloBoard - Total Expenses, Total By Category & Subtract from Budget (Checklist of tasks for feature 1)
+![TrelloBoard-FeatureThree](./docs/Trello_Feature3.PNG)
+
+### Feature 3 TrelloBoard Checklist Items - Total Expenses, Total By Category & Subtract from Budget
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist.PNG)
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist_2.PNG)
+
+### Feature 4 TrelloBoard - Main Menu, Sub Menu & Budget (Checklist of tasks for feature 4)
+![TrelloBoard-FeatureFour](./docs/Trello_Feature4.PNG)
+
+### Feature 4 TrelloBoard Checklist Items - Main Menu, Sub Menu & Budget 
+![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist.PNG)
+![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)
+
+
+### Main Menu Terminal
+![T1A3-Main-Menu](./docs/T1A3_Main_Menu.PNG)  
+When starting up the Terminal Application users will see a main menu screen introducing users to the terminal application and asking users to select between two options (1 - 2).
+1. Start Expense Tracker
+2. Exit Program
+
+### User Budget Input
+Selecting Option "1. Start Expense Tracker" will:
+1. Prompt users for a budget input ![User-Budget](./docs/T1A3_Main_Menu_Budget.PNG)
+
+take users to a second sub menu page where they will be prompted with a list of 
+
+
+
 
 ### Users may add expenses
 - Users may input expenses including expense name, amount, date, location & category. These expenses will be saved to a CSV file
@@ -20,8 +104,8 @@ After selecting Option 1 within the sub menu, users will be made to enter a whil
 
 
 2. View Expenses
-3. Remove a Specific Expense from a list
-4. Total Expenses, Total based on Category and Subtraction of Expenses from User Inputted Budget
+3. Remove a Specific Expense from a CSV File
+4. Total Expenses, Total based on Category and Subtraction of Expenses from User Input Budget
 5. Return to Main Menu
   
 
@@ -87,7 +171,6 @@ be included in a while loop condition after selecting option
 
 ### Provide deadline, duration or time indicator for each feature or checklist/checklist-item
 
-> Your checklists for each feature should have at least 5 items.
 
 
 ## Help Documentation (Extensive run down and system requirements)
@@ -106,7 +189,11 @@ be included in a while loop condition after selecting option
 ### Screenshot of Trello (Project Management Platform) - Track Implementation Plan
 ![TrelloBoard](./docs/TrelloFinal.PNG)
 
-## Algorithms 
+## Algorithms
+### Visual Representation
+![FlowChart-T1A3-Expense-Tracker](./docs/FlowChart_T1A3.drawio.png)
+
+### Textual Representation
 
 ## Python Styling Guide
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
