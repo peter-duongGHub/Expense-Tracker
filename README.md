@@ -9,13 +9,47 @@
 ## Help Documentation - Steps, Dependencies, System/Hardware Requirements, Command Line Arguments for application
 This help documentation will include a comprehensive guide on how to run Peter's Expense Tracker on Windows, Linux and Mac.
 
-### Step 1 - Python Installation
-Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. 
+### System/Hardware Requirements - Running a Python Terminal Application  
+> All system/hardware requirements listed below are for the  purposes of this Expense Tracking application. Depending on the complexity of an application, a better CPU or greater amount of RAM, storage and graphics may be required.  
+
+**1. Operating System**  
+Users may use one of the following operating systems:
+- Windows 
+- macOS
+- Linux
+
+**2. Processor (CPU)**  
+Any modern CPU that contains any 1 of the 3 Operating systems mentioned will suffice.
+
+**3. Memory (RAM)**  
+There is a minimum of 8GB of ram recommended for this terminal application. https://medium.com/@Developernetworks/how-much-ram-do-i-need-for-code-a-comprehensive-guide-bcf01a26b4f2
+
+**4. Storage**
+There is a minimum of 2GB of storage recommended for this terminal application. This storage space will include:
+- Python Installation
+- Dependencies 
+- Virtual environment
+- Expense Tracker Application Source Code
+- File created to store expenses
+- Any other files etc.
+
+**5. Graphics**
+For this terminal application any graphics hardware supporting 1 of the 3 operating systems will be sufficient.
+
+**5. Internet Connection**
+To install the necessary dependencies, python such as Python packages, libraries etc an internet connection will be required. An internet connection will also be needed to install Python, Pip, A text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva.
+
+
+### Step 1 - Python Installation  
+**Python**     
+Users must have Python installed on their devices to run the Expense Tracking Application. Alternatively windows users that do not have python installed may use py2exe which will package the python script into an executable. Py2exe will contain the correct modules and python interpreter to help run the script.
+
+Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. Please follow the instructions provided in the web link to have Python installed.
 [Python-Download](https://www.python.org/downloads/)
 ![Python-Download-Screenshot](./docs/DownloadPython.PNG)
 
 ### Step 2 - Text Editor or IDE
-Users must then download a text editor such as Visual Studio Code or IDE such as PyCharm to run the terminal application. Links of both Visual Studio Code and PyCharm are listed below. 
+Users must then download a text editor such as Visual Studio Code or IDE such as PyCharm to run the terminal application. Links of both Visual Studio Code and PyCharm are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.
 
 [Visual-Studio-Code](https://code.visualstudio.com/download)
 ![Visual-Studio-Code-Screenshot](./docs/VSCode.PNG)
@@ -24,26 +58,88 @@ Users must then download a text editor such as Visual Studio Code or IDE such as
 ![PyCharm](./docs/PyCharm.PNG)
 
 ### Step 3 - Installation of Pip
-Users must check if they have Pip installed. A link to installing pip is provided below.  
+Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A link to installing pip is provided below.  
 [Pip-Install](https://pip.pypa.io/en/stable/installation/)
 ![Pip-Install](./docs/PipInstall.PNG)
 
-### Step 4 - Extract Zip File
-Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application.
+### Step 4.1 - Extract Zip File & Running the Application
+Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu:
 
+1. Change directory into project directory folder ({PeterDuong}_T1A3)
 
+``` cd {PeterDuong}_T1A3 ```
 
-Required packages that have been installed for my python terminal application will be located in a file named requirements.txt. This will include:
+2. Change directory into source code folder (named 'src')
+
+``` cd src ```
+
+3. Create a virtual environment (see steps provided below in 4.2)
+
+4. Install dependencies (requirements.txt)
+The requirements.txt file will include the following dependencies for installation:
 - rich
-- pyinstaller
-- pytest
+- 
+- 
+- 
 
-## Expense Tracker
-- To use the terminal application users must change directory to src directory. Within Ubuntu for Windows or for linux, typing the below snippet will help direct users to the correct directory for execution of the application.     
-```cd src``` 
+``` pip install -r requirements.txt ```
 
-- To automate the process, an executable .sh file has been created to help users install required dependencies, software automate the terminal application. The executable script is run by typing the below inside a terminal application. 
-```./expense_tracker_script.sh```
+5. Next you may run the Expense tracking application using:
+
+``` python3 main.py ```
+
+ALTERNATIVELY, users may use the method below to automate the process to automatically check dependencies, python installation, pip installation, virtual environment, and running of the application without needing to type much. This method involves running a shell executable file with a sophisticated script to automate the process of running the application.
+
+1. Change directory into project directory folder ({PeterDuong}_T1A3)
+
+``` cd {PeterDuong}_T1A3 ```
+
+2. Change directory into source code folder (named 'src')
+
+``` cd src ```
+
+3. Run executable expense_tracker.sh file
+
+``` ./expense_tracker.sh ```
+
+Disclaimer: This is a very brief guide on running the application. Different factors such as current working directory may affect whether you can initially change directory in the project directory folder. For more information on common terminal commands please visit:
+
+Common Terminal Commands link:
+https://gist.github.com/bradtraversy/cc180de0edee05075a6139e42d5f28ce
+
+Common Terminal Commands Screeshot:
+![Terminal-Commands](./docs/TerminalCommands.PNG)
+
+### Step 4.2 - Virtual Environment 
+Users should ensure they are working in a virtual environment, to help create an isolated environment ensuring this application has its own dependencies and any dependencies installed do not affect any other potential python projects the users may be related to.
+
+After pip has been installed:
+
+Inside a terminal application such as Ubuntu, the following scripts may be applied to create a virtual environment:
+
+1. Install Virtualenv  
+``` pip install virtualenv ```
+
+2. Change Directory to project folder 
+
+``` cd {PeterDuong}_T1A3 ```
+
+3. Change Directory to src folder
+
+``` cd src ```
+
+4. Create virtual environment - venv  
+
+``` python<version> -m venv venv ```
+
+5. Activate virtual environment 
+
+``` source venv/bin/activate ```
+
+Disclaimer: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. These steps are meant for macOS and linux users. For further information please visit:
+
+For windows:  
+https://docs.python.org/3/library/venv.html
 
 ## List of Features (at least three) & Implementation Plan
 
@@ -77,15 +173,29 @@ Required packages that have been installed for my python terminal application wi
 ![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)
 
 
+## How to use the Expense Tracking application
+> Users type out using only letters and numbers where specified. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users. 
+
 ### Main Menu Terminal
 ![T1A3-Main-Menu](./docs/T1A3_Main_Menu.PNG)  
 When starting up the Terminal Application users will see a main menu screen introducing users to the terminal application and asking users to select between two options (1 - 2).
 1. Start Expense Tracker
 2. Exit Program
 
+If users select '1. Start Expense Tracker' a terminal output "Starting your Expense Tracking Journey..." will appear followed by another user prompt (explained in 'User Budget Input').
+
+![MainMenu1](./docs/MainMenuOption1.PNG)
+
+If users select '2. Exit Program' the terminal application will end leaving a terminal output "Thankyou for trying out Peter's Expense Tracker, till next time!".
+
+![MainMenu2](./docs/MainMenuOption2.PNG)
+
+User input must be in the form of a number restricting between 1 and 2 (select either 1 or 2). Any characters, letters, numbers etc typed other than the integers 1 and 2 will result in an error terminal output "Please enter a valid number" followed by a reprompt of the main menu asking for a user selection.
+
+![MainMenu1.1](./docs/ErrorMainMenu.PNG)
+
 ### User Budget Input
-Selecting Option "1. Start Expense Tracker" will:
-1. Prompt users for a budget input ![User-Budget](./docs/T1A3_Main_Menu_Budget.PNG)
+After selecting option 1 
 
 take users to a second sub menu page where they will be prompted with a list of 
 
