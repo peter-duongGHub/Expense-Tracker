@@ -28,7 +28,7 @@ def sub_menu(user_selection):
                 "[bold dark_goldenrod]What would you like to do first?[/]\n")
             console.print("[bold underline orange_red1]Menu:[/] ")
             print("1.", ":pencil:",
-                  "[bold green]Add[/] & [bold cornflower_blue]Save[/] Expense to Text File")
+                  "[bold green]Add[/] & [bold cornflower_blue]Save[/] Expense to CSV File")
             print("2.", ":scroll:",
                   "[bold medium_purple]View[/] Expense Entries")
             print("3.", ":recycle:", " [bold red]Remove[/] an Expense")

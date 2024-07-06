@@ -173,8 +173,8 @@ https://docs.python.org/3/library/venv.html
 ![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)
 
 
-## How to use the Expense Tracking application
-> Users type out using only letters and numbers where specified. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users. 
+## How to use the Expense Tracking application (Potential Errors, Steps & Guide)
+> Users type out using only specific letters and numbers where asked. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users. 
 
 ### Main Menu Terminal
 ![T1A3-Main-Menu](./docs/T1A3_Main_Menu.PNG)  
@@ -190,15 +190,124 @@ If users select '2. Exit Program' the terminal application will end leaving a te
 
 ![MainMenu2](./docs/MainMenuOption2.PNG)
 
-User input must be in the form of a number restricting between 1 and 2 (select either 1 or 2). Any characters, letters, numbers etc typed other than the integers 1 and 2 will result in an error terminal output "Please enter a valid number" followed by a reprompt of the main menu asking for a user selection.
 
-![MainMenu1.1](./docs/ErrorMainMenu.PNG)
+**Conditions and Error Handling**
+User input must be in the form of a number restricted between 1 and 2 (select either 1 or 2). Any characters, letters, numbers etc typed other than the integers 1 and 2 will result in an error terminal output "Please enter a valid number (1 or 2)" followed by a reprompt of the main menu asking for a user selection.
 
-### User Budget Input
-After selecting option 1 
+![MainMenu1.1](./docs/Error2MainMenu.PNG)
 
-take users to a second sub menu page where they will be prompted with a list of 
+#### User Budget Input
+After selecting option 1 in the main menu  users must enter a budget. 
 
+**Conditions and Error Handling**
+The budget entered must only numbers and may include numbers to a decimal place. Numbers greater than 2 decimal places (Example: 2.345) will be rounded to the nearest tenth. The application only requires 1 user input budget, any subsequent budget inputs will override previous budget inputs. Budgets will not be added, subtracted or operated on with other subsequent user budget inputs.
+
+![Rounding](./docs/Roundingmenu.PNG)
+
+Budgets entered that are less than or equal to 0 will result in a terminal output "Please enter a valid number" followed by a reprompt of the users budget.
+
+![Budget-error](./docs/BudgetMenu2.PNG)
+
+Budgets entered that are either letters, characters or anything outside of a number results in a terminal output "Please enter a valid input: could not convert string to float: (user_input)"
+
+![Characters-error](./docs/ErrorLetters.PNG)
+
+### Sub Menu
+After users have typed a valid budget input they are prompted with a sub menu in the terminal. The sub menu will include the following options outlined in the screenshot below:
+
+![Sub-Menu](./docs/SubMenu.PNG)
+
+**User Selection**
+1. Add & Save Expense to CSV File (Conditions and Error Handling) 
+If users select option 1 in the sub menu they will be prompted with entering an expense name, amount, date and category respectively. 
+
+**1.1 Name**
+Users will be prompted to enter an expense name in the terminal. Names can only contain letters. Any name containing numbers or characters such as @,#,$ will result in a terminal output error "Invalid input. Please enter a valid name including only letters!" followed by a reprompt for the expense name from the user. 
+![Name-Error](./docs/Option1SubError.PNG)
+
+After entering a valid expense name users are provided a successful terminal output "You have entered (user_input)"
+![Name-Success](./docs/SuccessName.PNG) followed by a user prompt for the expense amount further discussed in section 1.2.
+
+**1.2 Amount** 
+Users will be prompted to enter an expense amount in the terminal. Amounts can only contain numbers (including decimal) greater than 0. Numbers with decimal places will be rounded to the nearest tenth. Numbers less than or equal to 0 will result in a terminal output "You cannot have an expense amount 0 or lower Please try again:" followed by a user prompt for the expense amount again. Amounts cannot contain letters or characters 
+
+![Amount-Error](./docs/ErrorAmount.PNG)
+
+After entering a valid expense amount users are provided a successful terminal output "You have entered (user_input)" followed by a user prompt for the date further discussed in section 1.3.
+
+![Amount-Success](./docs/Success-Amount.PNG)
+
+**1.3 Date**
+Users will be prompted to enter a date in the valid format YYYY-MM-DD. Incorrect characters, letters or numbers not in this format will result in a terminal output error "Invalid date entered, please enter a valid date!" followed by a user prompt for the date again. Dates cannot contain letters, characters or decimal point numbers and must be written in the correct format.
+
+![Date-Error](./docs/Date-Error.PNG)
+
+After entering a valid expense date users are provided a successful terminal output "You have entered (user_input)" followed by a user prompt for the category further discussed in section 1.4.
+
+![Date-Success](./docs/Date-Success.PNG)
+
+**1.4 Categories**
+Users will be prompted to select an option (1-6) from the listed categories in the provided screenshot:
+
+![Category](./docs/Category.PNG)
+
+Users must only select a number between 1 and 6. This will not include decimal point numbers in this range. Users may not select characters, letters or numbers outside this range or a terminal output error will appear. If users select a number outside the range of 1 and 6 the following terminal output error will appear and a prompt for the user selection again. 
+
+![Category-Error](./docs/Category-Error.PNG)
+
+Any characters or letters entered will result in an error and a prompt for the user selection again. 
+
+![Category-Error2](./docs/Category-Error2.PNG)
+
+After successful entry of a valid category number users will be provided a terminal output as shown below followed by a user prompt to add another expense entry further discussed in section 1.5. The users expense name, amount, date and category will be saved into a CSV file for viewing, removing or adding to with further use of the terminal application.
+
+![Category-Success](./docs/Category-Success.PNG)
+
+**1.5 Add more expenses**
+After successful category selection users will be asked if they would like to add more expenses. Users must type "yes" or "no" in the terminal. Any other characters other than yes or no will result in a terminal output error shown below in the screenshot. Letter, characters or numbers that are not yes or no will result in an error terminal output.
+
+![Expense-Again-Error](./docs/Again-Error.PNG)
+
+After successful entry of "no" or "yes" users will be redirected to the sub menu for further addition, removal, totaling or viewing expenses.
+
+![Add-expense-again](./docs/Expense-Again.PNG)
+
+2. View Expense Entries (Conditions and Error Handling)
+When users select option 2 to view expense entries they will first be prompted with a question "Would you like to view your expense entries? (yes/no):". Users must either type "yes" or "no" to view expense entries. Any characters or numbers that are not "yes" or "no" will result in an error terminal output. 
+
+![View-Error](./docs/View-Error.PNG)
+
+After successful input of "no" users will receive a terminal output "You have selected not to view your entries!" and returned to the sub menu.
+
+![View-Success-No](./docs/View-Success-No.PNG)
+
+After successful input of "yes" users will see a list of expenses as a terminal output for viewers to review if needed. Following the list of expenses users are prompted to add more expenses if they would like to (the same conditions for user input apply as outlined in section 1.5.)
+
+![View-Success-Yes](./docs/View-Success-Yes.PNG)
+
+3. Remove an Expense (Conditions and Error Handling)
+Users will be shown a list of expenses from a CSV file. These will be previous expenses the user has entered. Users will be prompted to delete a specific expense entry, "Which expense entry would you like to delete? Upon successful entry of a listed number the expense will be removed from the CSV file and a terminal output "You have successfully deleted entry (user_input)" followed by returning to the sub menu. 
+
+![Remove-Success](./docs/Remove-Success.PNG)
+
+Users must type 1 number from the numbers included in the list and must not type characters such as @,#,$, or letters. Users entering characters or letters will result in an error and a prompt again for user selection.
+
+![Remove-Error](./docs/Remove-Error.PNG)
+
+If there is no CSV file present users will be presented a terminal output error will be shown to the user as shown in 3.1. If there is a CSV file present but no expense entries inside the CSV file a terminal output error will be shown to the user as shown in 3.2
+
+**3.1** ![Remove-Error-No-CSV](./docs/Remove-Error2.PNG)
+**3.2** ![Remove-Error-No-CSV](./docs/Remove-Error3.PNG)
+
+4. Total Expenses
+When selecting option 4. Users will be shown the total expense, total expense based on category and the remaining budget after subtraction of expenses. This will be followed up with a prompt for users to add another expense (details may be found in section 1.5)
+
+![Total-Success](./docs/Total-Success.PNG)
+
+5. Return to Main Menu (Conditions and Error Handling)
+When selecting option 5 in the sub menu, users will be returned to the main menu 
+
+![Return-Success](./docs/Return-Success.PNG)
 
 
 
@@ -301,7 +410,7 @@ be included in a while loop condition after selecting option
 
 ## Algorithms
 ### Visual Representation
-![FlowChart-T1A3-Expense-Tracker](./docs/FlowChart_T1A3.drawio.png)
+![FlowChart-T1A3-Expense-Tracker](./docs/ExpenseTracker_T1A3.drawio.png)
 
 ### Textual Representation
 

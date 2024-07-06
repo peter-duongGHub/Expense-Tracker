@@ -4,6 +4,7 @@ from rich import print
 from rich.console import Console
 from rich.theme import Theme
 import sys
+import pandas as pd
 
 console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
@@ -52,7 +53,7 @@ def add_expense_category(expense_name, expense_amount, expense_date):
                 new_expense_object = Expenses(
                     name=expense_name, amount=expense_amount, category=category_selection, date=expense_date)
                 return new_expense_object
-        except ValueError as e:
+        except TypeError as e:
             print(f"Please enter an integer value (1-6): {e}", style="error")
             continue
         except Exception as e:
@@ -140,8 +141,9 @@ def view_expenses(file_path):
                     expense_list = f.readlines()
                     for i, expense in enumerate(expense_list):
                         print(f"{i+1}. {expense}".strip())
-
+                    
                     exit_program()
+                    return
 
             elif view_expense.lower() == "no":
                 error.print(
@@ -153,6 +155,7 @@ def view_expenses(file_path):
                 continue
     else:
         error.print("You currently have no expense entries", style="error")
+
 
 
 def add_budget():
@@ -172,8 +175,6 @@ def add_budget():
         except Exception as e:
             print(f"Please enter a valid input: {e}", style="error")
             continue
-
-
 
 
 def total_expenses(file_path, user_budget):
@@ -219,30 +220,48 @@ def total_expenses(file_path, user_budget):
 
 
 def remove_expense(file_path):
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as f:
-            lines = f.readlines()
-            for i, line in enumerate(lines):
-                print(f"{i+1}. {line}".strip())
-            user_delete = int(
-                input("Which expense entry would you like to delete? "))
-            with open(file_path, 'w') as f:
-                index = 1
-                for line in lines:
-                    if index != user_delete:
-                        f.write(line)
+        while True:
+            try:
+                if os.path.exists(file_path):
+                    with open(file_path, 'r') as f:
+                        lines = f.readlines()
+                        checkfile = os.stat(file_path).st_size
+                        if checkfile == 0:
+                            error.print("You do not have any expenses to remove", style="error")
+                            break
+                        else:
+                            for i, line in enumerate(lines):
+                                print(f"{i+1}. {line}".strip())
+                                user_delete = int(
+                                    input(f"Which expense entry would you like to delete? (1 - {len(lines)}): "))
+                            with open(file_path, 'w') as f:
+                                index = 1
+                                for line in lines:
+                                    if index != user_delete:
+                                        f.write(line)
 
-                    else:
-                        error.print(
-                            f"You have successfully deleted entry {user_delete}", style="success")
+                                    else:
+                                        error.print(
+                                            f"You have successfully deleted entry {user_delete}", style="success")
+                                        return
+            
+                                    index += 1
+                else:
+                    error.print(
+                            "You do not currently have any expense entries to remove! ", style="error")
+                    break
 
-                    index += 1
+            except ValueError as e:
+                error.print(f"Please enter a valid expense entry: {e}", style="error")
+            except Exception as e:
+                error.print(f"Please enter a valid expense entry: {e}", style="error")
 
-        exit_program()
+                exit_program()
 
-    else:
-        error.print(
-            "You do not currently have any expense entries to remove! ", style="error")
+            
+            
+
+
 
 
 def exit_program():
@@ -251,27 +270,35 @@ def exit_program():
         if reprompt.lower() == "yes":
             return
         elif reprompt.lower() == "no":
-            sys.exit("You have exited the program")
+            return
         else:
-            print("Please input either yes or no")
+            error.print("Please input either yes or no", style="error")
 
 
 def main_menu():
     while True:
-        console.print(
-            "\n:sunglasses:", "[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]", ":bar_chart:")
-        console.print(
-            "[bold yellow]Choose from the following options (1-2):[/]", ":1234:")
-        console.print("\n""1.", ":arrow_forward:",
-                      "[bold green]Start[/] Expense Tracker")
-        console.print("2.", ":door:", "[bold red]Exit[/] Program\n")
-        user_selection = int(input("Make a selection: "))
-        if user_selection == 1:
-            return user_selection
-        if user_selection == 2:
+        try:
             console.print(
-                "[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
-            break
-        else:
-            error.print("Please enter a valid number", style="error")
+                "\n:sunglasses:", "[bold cyan]Welcome to [green]Peter's Expense Tracker[/], track your expenses on the go![/]", ":bar_chart:")
+            console.print(
+                "[bold yellow]Choose from the following options (1-2):[/]", ":1234:")
+            console.print("\n""1.", ":arrow_forward:",
+                          "[bold green]Start[/] Expense Tracker")
+            console.print("2.", ":door:", "[bold red]Exit[/] Program\n")
+            user_selection = int(input("Make a selection: "))
+            if user_selection == 1:
+                return user_selection
+            if user_selection == 2:
+                console.print(
+                    "[bold cyan]Thankyou for trying out [green]Peter's Expense Tracker[/], till next time![/]")
+                break
+            else:
+                error.print("Please enter a valid number (1 or 2)",
+                            style="error")
+                continue
+        except ValueError as e:
+            error.print("Please enter a valid number (1 or 2)", style="error")
+            continue
+        except Exception as e:
+            error.print("Please enter a valid number (1 or 2)", style="error")
             continue
