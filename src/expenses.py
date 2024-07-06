@@ -141,7 +141,7 @@ def view_expenses(file_path):
                     expense_list = f.readlines()
                     for i, expense in enumerate(expense_list):
                         print(f"{i+1}. {expense}".strip())
-                    
+
                     exit_program()
                     return
 
@@ -155,7 +155,6 @@ def view_expenses(file_path):
                 continue
     else:
         error.print("You currently have no expense entries", style="error")
-
 
 
 def add_budget():
@@ -220,59 +219,60 @@ def total_expenses(file_path, user_budget):
 
 
 def remove_expense(file_path):
-        while True:
-            try:
-                if os.path.exists(file_path):
-                    with open(file_path, 'r') as f:
-                        lines = f.readlines()
-                        checkfile = os.stat(file_path).st_size
-                        if checkfile == 0:
-                            error.print("You do not have any expenses to remove", style="error")
-                            break
-                        else:
-                            for i, line in enumerate(lines):
-                                print(f"{i+1}. {line}".strip())
-                                user_delete = int(
-                                    input(f"Which expense entry would you like to delete? (1 - {len(lines)}): "))
-                            with open(file_path, 'w') as f:
-                                index = 1
-                                for line in lines:
-                                    if index != user_delete:
-                                        f.write(line)
+    while True:
+        try:
+            if os.path.exists(file_path):
+                with open(file_path, 'r') as f:
+                    lines = f.readlines()
+                    checkfile = os.stat(file_path).st_size
+                    if checkfile == 0:
+                        error.print(
+                            "You do not have any expenses to remove", style="error")
+                        break
+                    else:
+                        for i, line in enumerate(lines):
+                            print(f"{i+1}. {line}".strip())
+                            user_delete = int(
+                                input(f"Which expense entry would you like to delete? (1 - {len(lines)}): "))
+                        with open(file_path, 'w') as f:
+                            index = 1
+                            for line in lines:
+                                if index != user_delete:
+                                    f.write(line)
 
-                                    else:
-                                        error.print(
-                                            f"You have successfully deleted entry {user_delete}", style="success")
-                                        return
-            
-                                    index += 1
-                else:
-                    error.print(
-                            "You do not currently have any expense entries to remove! ", style="error")
-                    break
+                                else:
+                                    error.print(
+                                        f"You have successfully deleted entry {user_delete}", style="success")
+                                    return
 
-            except ValueError as e:
-                error.print(f"Please enter a valid expense entry: {e}", style="error")
-            except Exception as e:
-                error.print(f"Please enter a valid expense entry: {e}", style="error")
+                                index += 1
+            else:
+                error.print(
+                    "You do not currently have any expense entries to remove! ", style="error")
+                break
 
-                exit_program()
+        except ValueError as e:
+            error.print(
+                f"Please enter a valid expense entry: {e}", style="error")
+        except Exception as e:
+            error.print(
+                f"Please enter a valid expense entry: {e}", style="error")
 
-            
-            
-
-
+            exit_program()
 
 
 def exit_program():
     while True:
-        reprompt = input("Would you like to add more expenses? (yes/no): ")
-        if reprompt.lower() == "yes":
-            return
-        elif reprompt.lower() == "no":
-            return
-        else:
-            error.print("Please input either yes or no", style="error")
+        try:
+            reprompt = input("Would you like to add more expenses? (yes/no): ")
+            if reprompt.lower() == "yes":
+                return
+            elif reprompt.lower() == "no":
+                return
+            else:
+                error.print("Please input either yes or no", style="error")
+        except Exception as e:
+            error.print(f"Please enter a valid input (yes/no): {e}")
 
 
 def main_menu():
