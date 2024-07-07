@@ -420,7 +420,7 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 ![Return-Success](./docs/Return-Success.PNG)  
    
 ## Algorithm (Thorough Walkthrough of logic)  
-![FlowChart-T1A3-Expense-Tracker](./docs/Final_T1A3-Expense-Tracker.drawio.png)  
+![FlowChart-T1A3-Expense-Tracker](./docs/T1A3-Expense-Tracker.drawio.png)  
 
 ## Python Styling Guide
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
