@@ -245,7 +245,7 @@ ALTERNATIVELY, users may use the method below to automate the process to automat
 
 **Step 6.2 Alternative executable script file (expense_tracker.sh)**  
 
-**6.2a Run executable expense_tracker.sh file** 
+**6.2a Run executable expense_tracker.sh file**   
 This step is recommended after all steps from 1 - 5 have been applied.   
 Running this executable file will run scripts to automate the process of running the Expense Tracking application. If one of the specific below steps are not already installed 
 or implemented on your device (Created Virtual Environment) the executable script will not execute the rest of the executable, in turn not run the application.  
