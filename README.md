@@ -423,136 +423,128 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 ## Trello (Project Management Platform) - Develop Implementation Plan    
 ![TrelloBoard](./docs/TrelloFinal.PNG)   
 
-### Outline Feature 1
-**1 Add & Save Expenses**
+### Outline Features
+**Implementation Plan Feature 1**
+![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)
+![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
+![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG) 
+![TrelloBoard-FeatureOne-Checklist_3](./docs/Save-Expense-Trello.PNG)
+
+**1. Add & Save Expenses to CSV File** 
 The purpose of the Add & Save Expenses feature is to allow users to keep track of expenses and manage expenses on the go, whether it's to spend on a budget, categorise expenses
 or just to keep a record of what date the expense was made, users may utilise this feature to do so. This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. Option 1 revolves around feature 1. 
-Feature 1 was created to allow users to input an expense when prompted and have that expense saved to a CSV file for later usage with other features. It takes four variables of an expense;
-Name, Amount, Date & Category saved to a file named expenses_list.csv in the form of comma seperated values (CSV). 
+Feature 1 was created to allow users to input an expense when prompted and have that expense saved to a CSV file for later usage with other features. It takes four variables to create an expense;
+Name, Amount, Date & Category saved to a file named expenses_list.csv in the form of comma seperated values (CSV). These four variables will be in the form of functions.
+add_expense_name, add_expense_date, add_expense_amount, add_expense_category. Add and save expenses components will be functions located in add_expenses.py and save_expenses.py respectively, located in package1. 
 
-#### Outline how features will be implemented 
-Below is a screenshot of a trelloboard for feature 1 listing how Add & Save Expenses function has been implemented in a checklist.
-It includes the following and works in the following ways:
-**1.1a Define Add Expense Name**   
-Add Expense Name will be one of the components in adding the expense. It will first need to be defined as a function
-and used in main.py. The defined function will also contain a block of code which will be further discussed below.
+**1.1 Add Expense Name, Add Expense Amount, Add Expense Date, Add Expense Category**   
+* [x] Define function    
+The above mentioned functions are components in adding the expense. They will first need to be defined as a function
+and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  
+  * [x] Apply while loop  
+    The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.  
+  * [x] Apply Try and Except blocks to handle potential errors  
+    try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
+    and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "Invalid input. Please enter a valid name including only letters!".  
+  * [x] Initialise variables 
+    expense_name, expense_amount and expense_date are initialised to the user input prompt. E.g; "Please enter an expense name:". The variable was created
+    to later be used in a return statement to return the value for usage with other functions - E.g; creating an object instance.
+  * [x] Flow control using if, elif, else statements with certain conditions
+    If condition was used to control what users could input and minimise chances for errors within the program due to user input.
+    E.g condition; The if condition in expense_name checks to see if the user input contains only letters and whether the length of the user input is greater than 0 and less than or equal to 20.
+    After the if condition completes as true expense_name is returned as a value. When the if condition isn't satisfied the else statement is executed
+    providing a terminal error output ""Invalid input. Please enter a valid name including only letters!", followed by a continue statement.
+  * [x] Continue statement
+    Continue Statements were used to skip past all code below the continue statement and re-enter the while loop again. This was added due
+    to incorrect input from the user requiring users to make another input. It provides the user multiple chances to enter
+    a valid input.    
+  * [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+    Error handling and testing of application with a variety of inputs may be found above.
+  * [x] Adhere to code styling guide
+    AutoPep8 Package was used to adhere to code styling guide. Further information below.
+  * [x] Terminal Output for potential Errors/Successful User input
+    Depending on user input the correct required input will result in users moving into the step of the Expense Tracker application. Incorrect or invalid
+    inputs will result in users having to re-enter an input.
+  * [x] Return statements 
+    Used to return values obtained from created variable associated to user input, and end while loops.  
+  * [x] Apply rich package to style code
+    Rich package installed and applied throughout all functions
+  * [x] Import appropriate modules
+    Correct modules such as datetime were imported from Pythons standard library for utilisation with functions such as
+    add_expense_date.
 
-**1.1b While True Loop**
-The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.
-
-**1.1c Try and Except Blocks**
-try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
-and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "Invalid input. Please enter a valid name including only letters!".
-
-**1.1d Initialise Variable Expense_Name in scope**
-expense_name is initialised to the user input prompted by "Please enter an expense name:". The variable was created
-to later be used in a return statement to return the value for usage with other functions - E.g; creating an object instance.
-
-**1.1e If conditions**
-If condition was used in add expense name to control what users could input and minimise chances for errors within the program.
-The if condition checks to see if the user input contains only letters and whether the length of the user input is greater than 0 and less than or equal to 20.
-After the if condition completes as true expense_name is returned as a value. When the if condition isn't satisfied the else statement is executed
-providing a terminal error output ""Invalid input. Please enter a valid name including only letters!", followed by a continue statement.
-
-**1.1f Continue Statement**
-The continue statement was provided to continue the while loop due to incorrect user input. It provides the user multiple chances to enter
-a valid input.
-
-
-
-
-![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
-![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)  
-
-
-
-### Feature 1 TrelloBoard - Add & Save Expenses (Checklist of tasks for feature 1)
-![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)  
-
-### Feature 1 TrellBoard Checklist Items - Add & Save Expenses   
-![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
-![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)  
-
-#### Extra Checklists for Feature 1  
-Add & Save Expenses to CSV File    
-1. Add Expense Name, Add Expense Amount, Add Expense Date
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to return value and end loop  
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 1 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import appropriate module (datetime) 
-
-
-2. Add Expense Category   
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to return value and end loop  
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Enumerate list of categories to display to users
-* [x] Create object instance and return object instance
-* [x] Initialise Category list with predefined categories
-* [x] Use arguments obtained from Expense name, amount & date to create object instance    
-* [x] Determine where feature 1 will be positioned in Application 
-* [x] Apply rich package to style code
+**1.1a Extra checklists for Add Expense Category**  
+  * [x] Enumerate list of categories to display to users
+    Enumerate used to iterate over a predefined list of categories
+    and list them as a terminal output for users to see and decide based on the list provided (users select based on category number)
+  * [x] Create object instance and return object instance
+    arguments obtained from add_expense_name, add_expense_amount and add_expense_date were used to create
+    an object instance. The object instance is returned for use with other functions such as save_expense.
+  * [x] Initialise Category list with predefined categories
+    A list of categories was predefined to ensure users categorise the expenses in the appropriate limited categories. This predefined list
+    ensure most categories were covered.
 
 ### Outline Feature 2
-
-### Feature 2 TrelloBoard - View and Remove Expenses (Checklist of tasks for feature 1)  
+**Implementation Plan Feature 2**
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2.PNG)  
-
-### Feature 2 TrelloBoard Checklist Items - View and Remove Expenses  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)  
 
-#### Extra Checklists for Feature 2  
-1. View Expenses
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to end loops
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 2 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import necessary module os to determine file path exists 
-* [x] Enumerate expenses and index to show users list of expenses previously entered 
-* [x] Using File/IO read files and store inside variable for user viewing
+**2. View & Remove Expenses from CSV File** 
+The purpose of the View and Remove Expenses feature is to allow users to keep track of the expenses they have added from option 1. They are able to see it in a managable list and may be further used in the categorisation or summing of all expenses,
+summing by category and subtraction of total expenses from a budget. This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. 
 
-   
-2. Remove Expenses  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to end loops
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 2 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import necessary module os to determine file path exists and confirm if any contents within file, if none break loop 
-* [x] Using File/IO read files and store inside variable for user viewing
-* [x] Using File/IO to remove specific lines in CSV file
+**2.1a Option 2 revolves around View Expenses** 
+View Expenses, reads expenses from a CSV file using File I/O to display to users a list of expenses they have input during use of the Expense Tracker application. View expenses will be a function in view_expenses.py located in package2.
+add_expense_name, add_expense_date, add_expense_amount, add_expense_category.  
+
+**2.1b Option 3 revolves around Remove Expenses** 
+Remove Expenses, removes an expense entry from a CSV file using File/IO appending. It incorporates the use of the function view expenses and prompts users to select an expense entry based on the listed numbers. Remove expense will be a function
+in remove_expenses.py in package2.
+
+**2.1a View & Remove Expenses**
+* [x] Define function    
+The above mentioned functions are components in viewing and removing an expense. They will first need to be defined as a function
+and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  
+  * [x] Apply while loop  
+    The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.  
+  * [x] Apply Try and Except blocks to handle potential errors  
+    try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
+    and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "You do not have any expenses to remove".  
+  * [x] Initialise variables 
+    Variables are initialised for use in if conditions. E.g; "Would you like to view your expense entries? (yes/no): ". 
+  * [x] Flow control using if, elif, else statements with certain conditions
+    If condition was used to control what users could input and minimise chances for errors within the program due to user input.
+    E.g condition; if view_expense variable associated to user input is not yes or no when all letters are lowered using the .lower() method
+    users receive a terminal output error and a continue statement is applied to continue the while loop.
+  * [x] Continue statement
+    Continue Statements were used to skip past all code below the continue statement and re-enter the while loop again. This was added due
+    to incorrect input from the user requiring users to make another input. It provides the user multiple chances to enter
+    a valid input.    
+  * [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+    Error handling and testing of application with a variety of inputs may be found above.
+  * [x] Adhere to code styling guide
+    AutoPep8 Package was used to adhere to code styling guide. Further information below.
+  * [x] Terminal Output for potential Errors/Successful User input
+    Depending on user input the correct required input will result in users moving into the step of the Expense Tracker application. Incorrect or invalid
+    inputs will result in users having to re-enter an input.
+  * [x] Return statements 
+    Used to end while loop.  
+  * [x] Apply rich package to style code
+    Rich package installed and applied throughout all functions
+  * [x] Import appropriate modules
+    Correct modules such as os were imported from Pythons standard library for utilisation with functions such as
+    view_expenses and remove_expenses. They were used to check if a file path exists.
+  * [x] Enumerate expenses and index to show users list of expenses previously entered 
+    Used enumerate to help list out both expenses and indexes from a list to help with user readability and selection
+  * [x] Using File/IO 
+    Used File/IO to read files, assign to a variable and display through for loop iterations
+
+**2.1b Extra Checklist for Remove Expenses**
+  * [x] Using File/IO to remove specific lines in CSV file
+    with remove_expenses function File/IO is used in a for loop to append lines based
+    on user selection. If user selects 1. then line 1 will be removed. Other user inputs will result in
+    terminal output errors and prompt users to enter a valid number
 
 ### Outline Feature 3
 
