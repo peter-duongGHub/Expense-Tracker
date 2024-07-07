@@ -14,6 +14,8 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define function total expenses
+
+
 def total_expenses(file_path, user_budget, Expenses):
     # Use if condition to check if file path exists to continue
     if os.path.exists(file_path):

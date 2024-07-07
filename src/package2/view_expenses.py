@@ -15,6 +15,8 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define view expenses function
+
+
 def view_expenses(file_path):
     # Using os module check file exists
     if os.path.exists(file_path):
@@ -46,7 +48,7 @@ def view_expenses(file_path):
                 else:
                     error.print("Please enter a valid answer", style="error")
                     continue
-    #Else statement terminal output error message if file doesnt exist 
+    # Else statement terminal output error message if file doesnt exist
     else:
         error.print("You currently have no expense entries", style="error")
         return

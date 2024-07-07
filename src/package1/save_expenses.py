@@ -14,6 +14,8 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define save expenses function
+
+
 def save_expense(new_expense_object: Expenses, file_path):
     error.print(
         f"Saving your expense.... {new_expense_object} to {file_path}", style="success")

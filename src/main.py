@@ -15,24 +15,28 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define the main function
+
+
 def main():
     # Initialise returned value from main menu followed by running sub menu function
     user_selection = main_menu()
     sub_menu(user_selection)
 
 # Define the sub menu function
+
+
 def sub_menu(user_selection):
     # Initialise variable expense file path to a CSV file named "expenses_list.csv"
     expense_file_path = "expenses_list.csv"
     # If conditional statement to check user input meets certain value
     if user_selection == 1:
-        # Terminal Output if user selection is equal to 1 
+        # Terminal Output if user selection is equal to 1
         console.print("Starting your Expense Tracking Journey...",
                       style="bold underline yellow")
         user_budget = add_budget()
         # Add while True loop to continue prompt if user enters invalid input
         while True:
-            # Try block 
+            # Try block
             try:
                 # Print list of options to show user
                 console.print(
@@ -82,6 +86,7 @@ def sub_menu(user_selection):
                 error.print(
                     f"Please enter a valid item from the sub menu: {e}", style="error")
                 continue
+
 
 # Allows execution of code when running as script but not when imported as module
 if __name__ == "__main__":

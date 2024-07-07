@@ -10,6 +10,8 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define main menu function
+
+
 def main_menu():
     while True:
         try:
@@ -40,6 +42,8 @@ def main_menu():
                 f"Please enter a valid number (1 or 2): {e}", style="error")
 
 # Define exit program function
+
+
 def exit_program():
     # While True loop in case user enters wrong input
     while True:
@@ -51,6 +55,6 @@ def exit_program():
             # Error handling, terminal output if wrong user input
             else:
                 error.print("Please input either yes or no", style="error")
-        # Except block for error handling     
+        # Except block for error handling
         except Exception as e:
             error.print(f"Please enter a valid input (yes/no): {e}")

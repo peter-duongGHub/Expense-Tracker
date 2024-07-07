@@ -12,7 +12,9 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
-# Create Class Expenses 
+# Create Class Expenses
+
+
 class Expenses:
     def __init__(self, name, amount, date, category):
         self.name = name
@@ -20,10 +22,13 @@ class Expenses:
         self.date = date
         self.category = category
     # Return as string for use in functions
+
     def __repr__(self):
         return f"{self.name}, {self.amount:.2f}, {self.date}, {self.category}"
 
 # Define Add expense category
+
+
 def add_expense_category(expense_name, expense_amount, expense_date):
     categories_expense = [
         "Food",
@@ -64,6 +69,8 @@ def add_expense_category(expense_name, expense_amount, expense_date):
             continue
 
 # Define Add expense date
+
+
 def add_expense_date():
     while True:
         try:
@@ -84,6 +91,8 @@ def add_expense_date():
             continue
 
 # Define Add expense name
+
+
 def add_expense_name():
     while True:
         try:
@@ -104,6 +113,8 @@ def add_expense_name():
             continue
 
 # Define Add budget
+
+
 def add_budget():
     while True:
         try:
@@ -123,6 +134,8 @@ def add_budget():
             continue
 
 # Define Add expense amount
+
+
 def add_expense_amount():
     while True:
         try:

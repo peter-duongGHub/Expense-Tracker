@@ -12,6 +12,8 @@ custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
 # Define remove expenses function
+
+
 def remove_expense(file_path):
     while True:
         try:

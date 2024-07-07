@@ -244,7 +244,7 @@ source venv/bin/activate
 deactivate
 ```
 
-**4 & 5 Disclaimer**: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. 
+**4 & 5 Disclaimer**: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the source directory folder. 
 These steps are meant for macOS and linux users, this may vary for windows users. 
 
 Common Terminal Commands link:  
