@@ -100,7 +100,7 @@ If users do not currently already have one, they must then download a text edito
 
 
 #### Step 3 - [Installation of Pip](https://pip.pypa.io/en/stable/installation/) 
-Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A screenshot to installing pip is provided below. Users may click "Installation of Pip" to direct themselves to a webpage including instructions to install pip.
+Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A screenshot to installing pip web page is provided below. Users may click "Installation of Pip" to direct themselves to a webpage including instructions to install pip.
 ![Pip-Install](./docs/PipInstall.PNG)  
 
 Alternatively here are the scripts to downloading pip.
@@ -138,7 +138,8 @@ pip3 --version
 ```
 
 #### Step 4 - Extract Zip File, Obtain from Repository & Running the Application  
-Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted (from Canva) or download the source code from GitHub(https://github.com/peter-duongGHub?tab=repositories) to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. Ensure you have followed the necessary steps above first (install Python, Pip, Python Interpreter etc.) 
+Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted (from Canva) or download the source code from GitHub(https://github.com/peter-duongGHub?tab=repositories) to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. 
+Ensure you have followed the necessary steps [above](#step-1---python-installation) first (install Python, Pip, Python Interpreter etc.) 
 
 **4a Open a terminal**
 
@@ -279,11 +280,12 @@ It will:
 The purpose of Peter's Expense Tracking terminal application is to allow users to quickly and efficiently add, view, remove & total their expenses against a fixed budget implemented by the user. It is a useful application to help users keep track of certain expenses they may have in their lives and provides a swift approach to calculating, categorising and viewing these expenses.   
 
 **This application will include the following four features:**
-- Add & Save Expenses to a CSV File
-- View and Remove Expenses from a CSV File
-- Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
-- Main and Sub Menu
-   
+1. Add & Save Expenses to a CSV File
+2. View and Remove Expenses from a CSV File
+3. Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
+
+
+### Error Handling 
 ### Main Menu Terminal  
 ![T1A3-Main-Menu](./docs/T1A3_Main_Menu.PNG)    
 When starting up the Terminal Application users will see a main menu screen introducing users to the terminal application and asking users to select between two options (1 - 2).   
@@ -421,10 +423,10 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 
   
 ## Trello (Project Management Platform) - Develop Implementation Plan    
-![TrelloBoard](./docs/TrelloFinal.PNG)   
+![TrelloBoard](./docs/TrelloBoard-Final.PNG)   
 
 ### Outline Features
-**Implementation Plan Feature 1**
+**Implementation Plan Feature 1**  
 ![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)
 ![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
 ![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG) 
@@ -438,54 +440,54 @@ Name, Amount, Date & Category saved to a file named expenses_list.csv in the for
 add_expense_name, add_expense_date, add_expense_amount, add_expense_category. Add and save expenses components will be functions located in add_expenses.py and save_expenses.py respectively, located in package1. 
 
 **1.1 Add Expense Name, Add Expense Amount, Add Expense Date, Add Expense Category**   
-* [x] Define function    
+* [x] **Define function**      
 The above mentioned functions are components in adding the expense. They will first need to be defined as a function
 and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  
-  * [x] Apply while loop  
+  * [x] **Apply while loop**    
     The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.  
-  * [x] Apply Try and Except blocks to handle potential errors  
+  * [x] **Apply Try and Except blocks to handle potential errors**    
     try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
     and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "Invalid input. Please enter a valid name including only letters!".  
-  * [x] Initialise variables 
+  * [x] **Initialise variables**   
     expense_name, expense_amount and expense_date are initialised to the user input prompt. E.g; "Please enter an expense name:". The variable was created
     to later be used in a return statement to return the value for usage with other functions - E.g; creating an object instance.
-  * [x] Flow control using if, elif, else statements with certain conditions
+  * [x] **Flow control using if, elif, else statements with certain conditions**  
     If condition was used to control what users could input and minimise chances for errors within the program due to user input.
     E.g condition; The if condition in expense_name checks to see if the user input contains only letters and whether the length of the user input is greater than 0 and less than or equal to 20.
     After the if condition completes as true expense_name is returned as a value. When the if condition isn't satisfied the else statement is executed
     providing a terminal error output ""Invalid input. Please enter a valid name including only letters!", followed by a continue statement.
-  * [x] Continue statement
+  * [x] **Continue statement**  
     Continue Statements were used to skip past all code below the continue statement and re-enter the while loop again. This was added due
     to incorrect input from the user requiring users to make another input. It provides the user multiple chances to enter
     a valid input.    
-  * [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-    Error handling and testing of application with a variety of inputs may be found above.
-  * [x] Adhere to code styling guide
-    AutoPep8 Package was used to adhere to code styling guide. Further information below.
-  * [x] Terminal Output for potential Errors/Successful User input
+  * [x] **Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)**  
+    Error handling and testing of application with a variety of inputs may be found [above](#error-handling)
+  * [x] **Adhere to code styling guide**  
+    AutoPep8 Package was used to adhere to code styling guide. Further information [below](#python-code-styling-guide---styling-convention)
+  * [x] **Terminal Output for potential Errors/Successful User input**  
     Depending on user input the correct required input will result in users moving into the step of the Expense Tracker application. Incorrect or invalid
     inputs will result in users having to re-enter an input.
-  * [x] Return statements 
+  * [x] **Return statements**  
     Used to return values obtained from created variable associated to user input, and end while loops.  
-  * [x] Apply rich package to style code
+  * [x] **Apply rich package to style code**  
     Rich package installed and applied throughout all functions
-  * [x] Import appropriate modules
+  * [x] **Import appropriate modules**  
     Correct modules such as datetime were imported from Pythons standard library for utilisation with functions such as
     add_expense_date.
 
 **1.1a Extra checklists for Add Expense Category**  
-  * [x] Enumerate list of categories to display to users
+  * [x] **Enumerate list of categories**  
     Enumerate used to iterate over a predefined list of categories
     and list them as a terminal output for users to see and decide based on the list provided (users select based on category number)
-  * [x] Create object instance and return object instance
+  * [x] **Create object instance and return object instance**  
     arguments obtained from add_expense_name, add_expense_amount and add_expense_date were used to create
     an object instance. The object instance is returned for use with other functions such as save_expense.
-  * [x] Initialise Category list with predefined categories
+  * [x] **Initialise Category list with predefined categories**  
     A list of categories was predefined to ensure users categorise the expenses in the appropriate limited categories. This predefined list
     ensure most categories were covered.
 
 ### Outline Feature 2
-**Implementation Plan Feature 2**
+**Implementation Plan Feature 2**  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2.PNG)  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)  
@@ -503,93 +505,90 @@ Remove Expenses, removes an expense entry from a CSV file using File/IO appendin
 in remove_expenses.py in package2.
 
 **2.1a View & Remove Expenses**
-* [x] Define function    
+* [x] **Define function**      
 The above mentioned functions are components in viewing and removing an expense. They will first need to be defined as a function
 and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  
-  * [x] Apply while loop  
+  * [x] **Apply while loop**    
     The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.  
-  * [x] Apply Try and Except blocks to handle potential errors  
+  * [x] **Apply Try and Except blocks to handle potential errors**    
     try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
     and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "You do not have any expenses to remove".  
-  * [x] Initialise variables 
+  * [x] **Initialise variables**   
     Variables are initialised for use in if conditions. E.g; "Would you like to view your expense entries? (yes/no): ". 
-  * [x] Flow control using if, elif, else statements with certain conditions
+  * [x] **Flow control using if, elif, else statements with certain conditions**  
     If condition was used to control what users could input and minimise chances for errors within the program due to user input.
     E.g condition; if view_expense variable associated to user input is not yes or no when all letters are lowered using the .lower() method
     users receive a terminal output error and a continue statement is applied to continue the while loop.
-  * [x] Continue statement
+  * [x] **Continue statement**  
     Continue Statements were used to skip past all code below the continue statement and re-enter the while loop again. This was added due
     to incorrect input from the user requiring users to make another input. It provides the user multiple chances to enter
     a valid input.    
-  * [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-    Error handling and testing of application with a variety of inputs may be found above.
-  * [x] Adhere to code styling guide
-    AutoPep8 Package was used to adhere to code styling guide. Further information below.
-  * [x] Terminal Output for potential Errors/Successful User input
+  * [x] **Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)**  
+    Error handling and testing of application with a variety of inputs may be found [above](#error-handling)
+  * [x] **Adhere to code styling guide**  
+    AutoPep8 Package was used to adhere to code styling guide. Further information [below](#python-code-styling-guide---styling-convention)
+  * [x] **Terminal Output for potential Errors/Successful User input**  
     Depending on user input the correct required input will result in users moving into the step of the Expense Tracker application. Incorrect or invalid
     inputs will result in users having to re-enter an input.
-  * [x] Return statements 
+  * [x] **Return statements**    
     Used to end while loop.  
-  * [x] Apply rich package to style code
+  * [x] **Apply rich package to style code**  
     Rich package installed and applied throughout all functions
-  * [x] Import appropriate modules
+  * [x] **Import appropriate modules**  
     Correct modules such as os were imported from Pythons standard library for utilisation with functions such as
     view_expenses and remove_expenses. They were used to check if a file path exists.
-  * [x] Enumerate expenses and index to show users list of expenses previously entered 
+  * [x] **Enumerate expenses and index to show users list of expenses previously entered**   
     Used enumerate to help list out both expenses and indexes from a list to help with user readability and selection
-  * [x] Using File/IO 
+  * [x] **Using File/IO**  
     Used File/IO to read files, assign to a variable and display through for loop iterations
 
 **2.1b Extra Checklist for Remove Expenses**
-  * [x] Using File/IO to remove specific lines in CSV file
+  * [x] **Using File/IO to remove specific lines in CSV file**  
     with remove_expenses function File/IO is used in a for loop to append lines based
     on user selection. If user selects 1. then line 1 will be removed. Other user inputs will result in
     terminal output errors and prompt users to enter a valid number
 
 ### Outline Feature 3
-
-### Feature 3 TrelloBoard - Total Expenses, Total By Category & Subtract from Budget (Checklist of tasks for feature 1)  
+**Implementation Plan Feature 3**  
 ![TrelloBoard-FeatureThree](./docs/Trello_Feature3.PNG)  
-
-### Feature 3 TrelloBoard Checklist Items - Total Expenses, Total By Category & Subtract from Budget  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist.PNG)  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist_2.PNG)  
 
-#### Extra Checklists for Feature 3  
-1. Total Expenses, Total Expenses by Category, Subtract expenses from Budget  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 3 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import appropriate module os
-* [x] Utilise user budget as argument to display remaining user budget to users
+**3. Total Expenses, Total by Category and Subtract from budget** 
+The purpose of the Total Expenses feature is to allow users to total the expenses they have added to the CSV file. They may total their expenses by category, as a net total or subtract the net total of the expenses from the user input budget.
+This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. Option 3 revolves around feature 3. 
+Feature 3 was created to allow users to view the total of expenses to better understand their spending habits and which categories they spend the most in. It helps users
+track their spendings and know how far their budget can take them. Total expenses feature will be in the form of a function total_expenses. It will be located in total_expenses.py in package 3.
 
-### Outline Feature 4
-
-### Feature 4 TrelloBoard - Main Menu, Sub Menu & Budget (Checklist of tasks for feature 4)  
-![TrelloBoard-FeatureFour](./docs/Trello_Feature4.PNG)  
-
-### Feature 4 TrelloBoard Checklist Items - Main Menu, Sub Menu & Budget   
-![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist.PNG)
-![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)  
-
-#### Extra Checklists for Feature 4  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Ensure users are shown correct available options
-* [x] If statements to control how Menus will interact or behave dependent on user input
-* [x] While true loop to continue menu prompt if user enters invalid input      
+**3. Total Expenses, Total Expenses by Category, Subtract expenses from Budget**   
+* [x] **Define function**      
+The above mentioned function is a component in totalling expenses. They will first need to be defined as a function
+and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  
+  * [x] **Initialise variables**   
+    Variables are initialised for use in for loops. E.g; for line in lines, lines was initialised as a variable to be used within a for loop
+    to iterate over each "line". Unpacking each expense component into an object instance to further append to a list.
+  * [x] **Flow control using if, elif, else statements with certain conditions**  
+    If condition was used to control what users could input and minimise chances for errors within the program due to user input.
+    E.g condition; If key pair value is listed in the newly initialised amount_by_category dictionary, key value pairs with the same "key" category will be summed together,
+    else the new key value will be appended to the dictionary. 
+  * [x] **Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)**  
+    Error handling and testing of application with a variety of inputs may be found [below](#error-handling)
+  * [x] **Adhere to code styling guide**  
+    AutoPep8 Package was used to adhere to code styling guide. Further information [below](#python-code-styling-guide---styling-convention).
+  * [x] **Terminal Output for potential Errors/Successful User input**  
+    Depending on user input the correct required input will result in users moving into the step of the Expense Tracker application. Incorrect or invalid
+    inputs will result in users having to re-enter an input.
+  * [x] **Return statements**    
+    Used to return to sub menu while loop 
+  * [x] **Apply rich package to style code**  
+    Rich package installed and applied throughout all functions
+  * [x] **Import appropriate modules**  
+    Correct modules such as os were imported from Pythons standard library for utilisation with functions such as
+    view_expenses and remove_expenses. They were used to check if a file path exists.
+  * [x] **Enumerate expenses and index to show users list of expenses previously entered**   
+    Used enumerate to help determine whether file path exists or not
+  * [x] **Using File/IO**  
+    Used File/IO to read files, assign to a variable and display through for loop iterations
 
 ## Python Code Styling Guide - Styling convention
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
