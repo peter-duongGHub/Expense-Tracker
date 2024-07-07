@@ -6,26 +6,26 @@
 
 ![GitHub-Screenshot](./docs/GitHubRepository.PNG)
 
-## Help Documentation - Steps, Dependencies, System/Hardware Requirements, Command Line Arguments for application
+## Help Documentation - Steps, Dependencies, System/Hardware Requirements, Command Line Arguments for application  
 This help documentation will include a comprehensive guide on how to run Peter's Expense Tracker on Linux and Mac.
 
-### System/Hardware Requirements - Running a Python Terminal Application  
+### System/Hardware Requirements - Running a Python Terminal Application    
 > All system/hardware requirements listed below are for the  purposes of this Expense Tracking application. Depending on the complexity of an application, a better CPU or greater amount of RAM, storage and graphics may be required.  
 
-**1. Operating System**  
+**1. Operating System**    
 Users may use one of the following operating systems:
 - Windows 
 - macOS
 - Linux
 
-**2. Processor (CPU)**  
+**2. Processor (CPU)**    
 Any modern CPU that contains any 1 of the 3 Operating systems mentioned will suffice.
 
-**3. Memory (RAM)**  
+**3. Memory (RAM)**      
 There is a minimum of 8GB of ram recommended for this terminal 
 application(Developer Networks, 2023).
 
-**4. Storage**
+**4. Storage**    
 There is a minimum of 2GB of storage recommended for this terminal application. This storage space will include:
 - Python Installation
 - Dependencies 
@@ -33,23 +33,59 @@ There is a minimum of 2GB of storage recommended for this terminal application. 
 - Expense Tracker Application Source Code
 - CSV File created to store expenses
 
-**5. Graphics**
+**5. Graphics**      
 For this terminal application any graphics hardware supporting 1 of the 3 mentioned operating systems will be sufficient.
 
-**5. Internet Connection**
-To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva.
+**5. Internet Connection**      
+To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva or GitHub.
 
 ### Installation Steps - Running a Python Terminal Application   
-#### Step 1 - Python Installation      
+#### Step 1 - Python Installation        
 **Python**       
 Users must have Python installed on their devices to run the Expense Tracking Application. Alternatively windows users that do not have python installed may use py2exe which will package the python script into an executable. Py2exe will contain the correct modules and python interpreter to help run the script.  
 
-Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. Please follow the instructions provided in the web link to have Python installed.  
+Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. Please follow the instructions provided in the web link to have Python installed.    
 [Python-Download](https://www.python.org/downloads/)  
-![Python-Download-Screenshot](./docs/DownloadPython.PNG)  
+![Python-Download-Screenshot](./docs/DownloadPython.PNG) 
+
+Alternatively here are the scripts to downloading python.
+
+##### For Linux(Ubuntu):
+
+**Verify Installation**    
+
+```
+python3 --version
+```
+
+**Install Python 3.6**    
+
+```
+sudo apt-get update
+sudo apt-get install python3.6
+```
+
+##### For MacOs:   
+
+**Check if Homebrew Installed**  
+
+```
+brew --version
+```
+
+**Install Homebrew if not installed**   
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+**Install Python**   
+```
+brew install python
+```
 
 #### Step 2 - Text Editor, IDE or Terminal (Ubuntu)    
-Users must then download a text editor such as Visual Studio Code, IDE such as PyCharm or Terminal (Ubuntu) to run the terminal application. Links of both Visual Studio Code, PyCharm and Ubuntu are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.   
+If users do not currently already have one, they must then download a text editor such as Visual Studio Code, IDE such as PyCharm or Terminal (such as Ubuntu) to run the terminal application. Links of both Visual Studio Code, PyCharm and Ubuntu are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.   
 
 [Visual-Studio-Code](https://code.visualstudio.com/download)   
 ![Visual-Studio-Code-Screenshot](./docs/VSCode.PNG)  
@@ -57,17 +93,22 @@ Users must then download a text editor such as Visual Studio Code, IDE such as P
 [PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)  
 ![PyCharm](./docs/PyCharm.PNG)  
 
-#### Step 3 - Installation of Pip  
-Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A link to installing pip is provided below.  
-[Pip-Install](https://pip.pypa.io/en/stable/installation/)
+[Ubuntu](https://ubuntu.com/download)
+[Ubuntu](./docs/UbuntuDownload.PNG)
+
+
+#### Step 3 - [Installation of Pip](https://pip.pypa.io/en/stable/installation/) 
+Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A screenshot to installing pip is provided below. Users may click "Installation of Pip" to direct themselves to a webpage including instructions to install pip.
 ![Pip-Install](./docs/PipInstall.PNG)  
 
 #### Step 4.1 - Extract Zip File & Running the Application  
 Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu:  
 
-1. Change directory into project directory folder ({PeterDuong}_T1A3)  
+1. Change directory into project directory folder ({PeterDuong}_T1A3)    
 
-``` cd {PeterDuong}_T1A3 ```  
+``` 
+cd {PeterDuong}_T1A3
+```  
 
 2. Change directory into source code folder (named 'src')  
 
