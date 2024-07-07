@@ -1,24 +1,29 @@
+# Import rich library and datetime module for use in code
 from rich import print
 import datetime
 from rich.console import Console
 from rich.theme import Theme
 
+
+# Initialise console variable to use Rich Package installed from Pip
 console = Console()
+
+# Apply Theme colour to display success or error messages and initialise this to error for use as "error.print"
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
-
+# Create Class Expenses 
 class Expenses:
     def __init__(self, name, amount, date, category):
         self.name = name
         self.amount = amount
         self.date = date
         self.category = category
-
+    # Return as string for use in functions
     def __repr__(self):
         return f"{self.name}, {self.amount:.2f}, {self.date}, {self.category}"
 
-
+# Define Add expense category
 def add_expense_category(expense_name, expense_amount, expense_date):
     categories_expense = [
         "Food",
@@ -58,7 +63,7 @@ def add_expense_category(expense_name, expense_amount, expense_date):
                 f"Please enter an integer value (1-6): {e}", style="error")
             continue
 
-
+# Define Add expense date
 def add_expense_date():
     while True:
         try:
@@ -78,7 +83,7 @@ def add_expense_date():
                 f"Invalid date entered, please enter a valid date!", style="error")
             continue
 
-
+# Define Add expense name
 def add_expense_name():
     while True:
         try:
@@ -98,7 +103,7 @@ def add_expense_name():
                 f"Invalid input. Please enter a valid name including only letters!: {e}", style="error")
             continue
 
-
+# Define Add budget
 def add_budget():
     while True:
         try:
@@ -117,7 +122,7 @@ def add_budget():
             print(f"Please enter a valid input: {e}", style="error")
             continue
 
-
+# Define Add expense amount
 def add_expense_amount():
     while True:
         try:
