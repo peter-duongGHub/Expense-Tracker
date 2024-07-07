@@ -1,8 +1,10 @@
-from expenses import Expenses
+from package1 import add_budget, add_expense_amount, add_expense_name, add_expense_date, add_expense_category, save_expense, Expenses
+from package2 import remove_expense, view_expenses
+from package3 import main_menu, total_expenses, exit_program
+
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
-from expenses import add_budget, add_expense_amount, add_expense_category, add_expense_date, add_expense_name, save_expense, total_expenses, remove_expense, view_expenses, exit_program, main_menu
 
 # Initialise
 console = Console()
@@ -51,7 +53,7 @@ def sub_menu(user_selection):
                 elif sub_selection == 3:
                     remove_expense(expense_file_path)
                 elif sub_selection == 4:
-                    total_expenses(expense_file_path, user_budget)
+                    total_expenses(expense_file_path, user_budget, Expenses)
                 elif sub_selection == 5:
                     print("-------------")
                     main()
