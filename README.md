@@ -306,7 +306,7 @@ It will:
 
 The purpose of Peter's Expense Tracking terminal application is to allow users to quickly and efficiently add, view, remove & total their expenses against a fixed budget implemented by the user. It is a useful application to help users keep track of certain expenses they may have in their lives and provides a swift approach to calculating, categorising and viewing these expenses.   
 
-**This application will include the following four features:**
+**This application will include the following three features:**
 1. Add & Save Expenses to a CSV File
 2. View and Remove Expenses from a CSV File
 3. Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
