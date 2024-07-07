@@ -337,7 +337,9 @@ Users will be prompted to enter an expense name in the terminal. Names can only 
 ![Name-Error](./docs/Option1SubError.PNG)  
 
 After entering a valid expense name users are provided a successful terminal output "You have entered (user_input)"  
-![Name-Success](./docs/SuccessName.PNG) followed by a user prompt for the expense amount further discussed in section 1.2.  
+followed by a user prompt for the expense amount further discussed in section 1.2.
+
+![Name-Success](./docs/SuccessName.PNG) 
 
 **1.2 Amount**   
 Users will be prompted to enter an expense amount in the terminal. Amounts can only contain numbers (including decimal) greater than 0. Numbers with decimal places will be rounded to the nearest tenth. Numbers less than or equal to 0 will result in a terminal output "You cannot have an expense amount 0 or lower Please try again:" followed by a user prompt for the expense amount again. Amounts cannot contain letters or characters   
@@ -383,7 +385,7 @@ After successful entry of "no" or "yes" users will be redirected to the sub menu
 
 ![Add-expense-again](./docs/Expense-Again.PNG)  
 
-2. View Expense Entries (Conditions and Error Handling)  
+1. View Expense Entries (Conditions and Error Handling)  
 When users select option 2 to view expense entries they will first be prompted with a question "Would you like to view your expense entries? (yes/no):". Users must either type "yes" or "no" to view expense entries. Any characters or numbers that are not "yes" or "no" will result in an error terminal output.   
 
 ![View-Error](./docs/View-Error.PNG)  
@@ -407,8 +409,10 @@ Users must type 1 number from the numbers included in the list and must not type
 
 If there is no CSV file present users will be presented a terminal output error will be shown to the user as shown in 3.1. If there is a CSV file present but no expense entries inside the CSV file a terminal output error will be shown to the user as shown in 3.2  
 
-**3.1** ![Remove-Error-No-CSV](./docs/Remove-Error2.PNG)  
-**3.2** ![Remove-Error-No-CSV](./docs/Remove-Error3.PNG)  
+**3.1**   
+![Remove-Error-No-CSV](./docs/Remove-Error2.PNG)  
+**3.2**   
+![Remove-Error-No-CSV](./docs/Remove-Error3.PNG)  
 
 4. Total Expenses  
 When selecting option 4. Users will be shown the total expense, total expense based on category and the remaining budget after subtraction of expenses. This will be followed up with a prompt for users to add another expense (details may be found in section 1.5)  
@@ -576,7 +580,7 @@ and used in main.py within the sub menu function. The defined function will also
     E.g condition; If key pair value is listed in the newly initialised amount_by_category dictionary, key value pairs with the same "key" category will be summed together,
     else the new key value will be appended to the dictionary. 
   * [x] **Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)**  
-    Error handling and testing of application with a variety of inputs may be found [below](#error-handling)
+    Error handling and testing of application with a variety of inputs may be found [above](#error-handling)
   * [x] **Adhere to code styling guide**  
     AutoPep8 Package was used to adhere to code styling guide. Further information [below](#python-code-styling-guide---styling-convention).
   * [x] **Terminal Output for potential Errors/Successful User input**  
