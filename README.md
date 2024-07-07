@@ -426,13 +426,13 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 ![TrelloBoard](./docs/TrelloBoard-Final.PNG)   
 
 ### Outline Features
-**Implementation Plan Feature 1**  
-![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)
-![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
-![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG) 
-![TrelloBoard-FeatureOne-Checklist_3](./docs/Save-Expense-Trello.PNG)
+**Implementation Plan Feature 1**     
+![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)  
+![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)  
+![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)   
+![TrelloBoard-FeatureOne-Checklist_3](./docs/Save-Expense-Trello.PNG)  
 
-**1. Add & Save Expenses to CSV File** 
+**1. Add & Save Expenses to CSV File**   
 The purpose of the Add & Save Expenses feature is to allow users to keep track of expenses and manage expenses on the go, whether it's to spend on a budget, categorise expenses
 or just to keep a record of what date the expense was made, users may utilise this feature to do so. This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. Option 1 revolves around feature 1. 
 Feature 1 was created to allow users to input an expense when prompted and have that expense saved to a CSV file for later usage with other features. It takes four variables to create an expense;
@@ -492,15 +492,15 @@ and used in main.py within the sub menu function. The defined function will also
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)  
 
-**2. View & Remove Expenses from CSV File** 
+**2. View & Remove Expenses from CSV File**   
 The purpose of the View and Remove Expenses feature is to allow users to keep track of the expenses they have added from option 1. They are able to see it in a managable list and may be further used in the categorisation or summing of all expenses,
 summing by category and subtraction of total expenses from a budget. This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. 
 
-**2.1a Option 2 revolves around View Expenses** 
+**2.1a Option 2 revolves around View Expenses**   
 View Expenses, reads expenses from a CSV file using File I/O to display to users a list of expenses they have input during use of the Expense Tracker application. View expenses will be a function in view_expenses.py located in package2.
 add_expense_name, add_expense_date, add_expense_amount, add_expense_category.  
 
-**2.1b Option 3 revolves around Remove Expenses** 
+**2.1b Option 3 revolves around Remove Expenses**   
 Remove Expenses, removes an expense entry from a CSV file using File/IO appending. It incorporates the use of the function view expenses and prompts users to select an expense entry based on the listed numbers. Remove expense will be a function
 in remove_expenses.py in package2.
 
@@ -549,18 +549,18 @@ and used in main.py within the sub menu function. The defined function will also
     terminal output errors and prompt users to enter a valid number
 
 ### Outline Feature 3
-**Implementation Plan Feature 3**  
+**Implementation Plan Feature 3**    
 ![TrelloBoard-FeatureThree](./docs/Trello_Feature3.PNG)  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist.PNG)  
 ![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist_2.PNG)  
 
-**3. Total Expenses, Total by Category and Subtract from budget** 
+**3. Total Expenses, Total by Category and Subtract from budget**   
 The purpose of the Total Expenses feature is to allow users to total the expenses they have added to the CSV file. They may total their expenses by category, as a net total or subtract the net total of the expenses from the user input budget.
 This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. Option 3 revolves around feature 3. 
 Feature 3 was created to allow users to view the total of expenses to better understand their spending habits and which categories they spend the most in. It helps users
 track their spendings and know how far their budget can take them. Total expenses feature will be in the form of a function total_expenses. It will be located in total_expenses.py in package 3.
 
-**3. Total Expenses, Total Expenses by Category, Subtract expenses from Budget**   
+**Total Expenses, Total Expenses by Category, Subtract expenses from Budget**      
 * [x] **Define function**      
 The above mentioned function is a component in totalling expenses. They will first need to be defined as a function
 and used in main.py within the sub menu function. The defined function will also contain a block of code which will be further discussed below.  

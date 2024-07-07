@@ -1,3 +1,4 @@
+# Import Packages 1, 2 & 3 as well as Rich Package. Total = 4 Packages. Use each function from each package.
 from package1 import add_budget, add_expense_amount, add_expense_name, add_expense_date, add_expense_category, save_expense, Expenses
 from package2 import remove_expense, view_expenses
 from package3 import main_menu, total_expenses, exit_program
@@ -6,21 +7,26 @@ from rich import print
 from rich.console import Console
 from rich.theme import Theme
 
-# Initialise
+# Initialise console variable to use Rich Package installed from Pip
 console = Console()
+
+# Apply Theme colour to display success or error messages and initialise this to error for use as "error.print"
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
-
+# Define the main function
 def main():
-
+    # Initialise returned value from main menu followed by running sub menu function
     user_selection = main_menu()
     sub_menu(user_selection)
 
-
+# Define the sub menu function
 def sub_menu(user_selection):
+    # Initialise variable expense file path to a CSV file named "expenses_list.csv"
     expense_file_path = "expenses_list.csv"
+    # If conditional statement to check user input meets certain value
     if user_selection == 1:
+        # Terminal Output if user selection is equal to 1, 
         console.print("Starting your Expense Tracking Journey...",
                       style="bold underline yellow")
         user_budget = add_budget()
