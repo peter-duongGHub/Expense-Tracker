@@ -37,7 +37,7 @@ There is a minimum of 2GB of storage recommended for this terminal application. 
 For this terminal application any graphics hardware supporting 1 of the 3 mentioned operating systems will be sufficient.
 
 **6. Internet Connection**      
-To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva or GitHub.
+To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code, IDE such as PyCharm or Terminal such as Ubuntu and to obtain the application source code from Canva or GitHub.
 
 ### Dependencies
 The following dependencies will be required to ensure the application runs smoothly and as intended for the user.
@@ -138,7 +138,7 @@ pip3 --version
 ```
 
 #### Step 4 - Extract Zip File, Obtain from Repository & Running the Application  
-Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. Ensure you have followed the necessary steps above first (install Python, Pip, Python Interpreter etc.) 
+Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted (from Canva) or download the source code from GitHub(https://github.com/peter-duongGHub?tab=repositories) to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. Ensure you have followed the necessary steps above first (install Python, Pip, Python Interpreter etc.) 
 
 **4a Open a terminal**
 
@@ -268,20 +268,22 @@ It will:
 ./expense_tracker.sh 
 ```  
 
-## List of Features (at least three) & Description 
+## List of Features (at least three) & Description (Conditions, Potential Errors, Steps & Guide)
+
+### Algorithm (Visual Walkthrough of logic)  
+![FlowChart-T1A3-Expense-Tracker](./docs/T1A3-Expense-Tracker.drawio.png)  
+
 ### Overview of Expense Tracker (Purpose & Features)  
+> Users type out using only specific letters and numbers where asked. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users.     
+
 The purpose of Peter's Expense Tracking terminal application is to allow users to quickly and efficiently add, view, remove & total their expenses against a fixed budget implemented by the user. It is a useful application to help users keep track of certain expenses they may have in their lives and provides a swift approach to calculating, categorising and viewing these expenses.   
 
 **This application will include the following four features:**
 - Add & Save Expenses to a CSV File
-
-- View Expenses from a CSV File
-- Remove Expenses from a CSV File
+- View and Remove Expenses from a CSV File
 - Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
-
-### How to use the Expense Tracker & its features (Conditions, Potential Errors, Steps & Guide)  
-> Users type out using only specific letters and numbers where asked. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users.   
-
+- Main and Sub Menu
+   
 ### Main Menu Terminal  
 ![T1A3-Main-Menu](./docs/T1A3_Main_Menu.PNG)    
 When starting up the Terminal Application users will see a main menu screen introducing users to the terminal application and asking users to select between two options (1 - 2).   
@@ -416,13 +418,52 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 
 ![Return-Success](./docs/Return-Success.PNG)  
 
-### Algorithm (Visual Walkthrough of logic)  
-![FlowChart-T1A3-Expense-Tracker](./docs/T1A3-Expense-Tracker.drawio.png)  
+
   
 ## Trello (Project Management Platform) - Develop Implementation Plan    
 ![TrelloBoard](./docs/TrelloFinal.PNG)   
 
 ### Outline Feature 1
+**1 Add & Save Expenses**
+The purpose of the Add & Save Expenses feature is to allow users to keep track of expenses and manage expenses on the go, whether it's to spend on a budget, categorise expenses
+or just to keep a record of what date the expense was made, users may utilise this feature to do so. This feature was created following the creation of the sub menu. Once sub menu options are listed users are prompted to select an option. Option 1 revolves around feature 1. 
+Feature 1 was created to allow users to input an expense when prompted and have that expense saved to a CSV file for later usage with other features. It takes four variables of an expense;
+Name, Amount, Date & Category saved to a file named expenses_list.csv in the form of comma seperated values (CSV). 
+
+#### Outline how features will be implemented 
+Below is a screenshot of a trelloboard for feature 1 listing how Add & Save Expenses function has been implemented in a checklist.
+It includes the following and works in the following ways:
+**1.1a Define Add Expense Name**   
+Add Expense Name will be one of the components in adding the expense. It will first need to be defined as a function
+and used in main.py. The defined function will also contain a block of code which will be further discussed below.
+
+**1.1b While True Loop**
+The while True loop was implemented to ensure users are continually prompted if an inappropriate value has been entered.
+
+**1.1c Try and Except Blocks**
+try and except blocks were used to handle potentially wrong inputs from users. It try's a set of code block
+and if any invalid input occurs from the user an error will appear in the form of a terminal output, E.g; "Invalid input. Please enter a valid name including only letters!".
+
+**1.1d Initialise Variable Expense_Name in scope**
+expense_name is initialised to the user input prompted by "Please enter an expense name:". The variable was created
+to later be used in a return statement to return the value for usage with other functions - E.g; creating an object instance.
+
+**1.1e If conditions**
+If condition was used in add expense name to control what users could input and minimise chances for errors within the program.
+The if condition checks to see if the user input contains only letters and whether the length of the user input is greater than 0 and less than or equal to 20.
+After the if condition completes as true expense_name is returned as a value. When the if condition isn't satisfied the else statement is executed
+providing a terminal error output ""Invalid input. Please enter a valid name including only letters!", followed by a continue statement.
+
+**1.1f Continue Statement**
+The continue statement was provided to continue the while loop due to incorrect user input. It provides the user multiple chances to enter
+a valid input.
+
+
+
+
+![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
+![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)  
+
 
 
 ### Feature 1 TrelloBoard - Add & Save Expenses (Checklist of tasks for feature 1)
