@@ -423,7 +423,11 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 
   
 ## Trello (Project Management Platform) - Develop Implementation Plan    
-![TrelloBoard](./docs/TrelloBoard-Final.PNG)   
+![TrelloBoard](./docs/TrelloBoard-Final.PNG) 
+![TrelloBoard](./docs/Trello_ProjectScope.PNG)  
+![TrelloBoard](./docs/Trello_ReadME.PNG)  
+![TrelloBoard](./docs/Trello_Submission.PNG)  
+![TrelloBoard](./docs/Trello_Coding&Testing.PNG)  
 
 ### Outline Features
 **Implementation Plan Feature 1**     
