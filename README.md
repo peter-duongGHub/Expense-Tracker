@@ -48,8 +48,8 @@ Users must first download Python on their operating system. It is recommended to
 [Python-Download](https://www.python.org/downloads/)  
 ![Python-Download-Screenshot](./docs/DownloadPython.PNG)  
 
-#### Step 2 - Text Editor or IDE    
-Users must then download a text editor such as Visual Studio Code or IDE such as PyCharm to run the terminal application. Links of both Visual Studio Code and PyCharm are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.   
+#### Step 2 - Text Editor, IDE or Terminal (Ubuntu)    
+Users must then download a text editor such as Visual Studio Code, IDE such as PyCharm or Terminal (Ubuntu) to run the terminal application. Links of both Visual Studio Code, PyCharm and Ubuntu are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.   
 
 [Visual-Studio-Code](https://code.visualstudio.com/download)   
 ![Visual-Studio-Code-Screenshot](./docs/VSCode.PNG)  
@@ -78,13 +78,10 @@ Users must download Peter's Expense Tracker Terminal Application zip file and ha
 4. Install dependencies (requirements.txt)  
 The requirements.txt file will include the following dependencies for installation:  
 - rich
-- 
-- 
-- 
-  
+
 ``` pip install -r requirements.txt ```  
 
-5. Next you may run the Expense tracking application using:    
+1. Next you may run the Expense tracking application using:    
 
 ``` python3 main.py ```  
 
