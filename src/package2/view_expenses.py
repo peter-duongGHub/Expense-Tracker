@@ -1,5 +1,7 @@
+# Import function exit_program from package3 for use
 from package3 import exit_program
 
+# Import os module and install rich library to use in code
 import os.path
 from rich import print
 from rich.console import Console

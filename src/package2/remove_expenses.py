@@ -1,13 +1,17 @@
+# Import os module from Python standard library and rich library for use in code
 import os.path
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
 
+# Initialise console variable to use Rich Package installed from Pip
 console = Console()
+
+# Apply Theme colour to display success or error messages and initialise this to error for use as "error.print"
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
-
+# Define remove expenses function
 def remove_expense(file_path):
     while True:
         try:
