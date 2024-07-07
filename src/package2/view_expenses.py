@@ -9,13 +9,14 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 def view_expenses(file_path):
     if os.path.exists(file_path):
         checkfile = os.stat(file_path).st_size
         while True:
             if checkfile == 0:
                 error.print(
-                "You do not have any expenses to remove", style="error")
+                    "You do not have any expenses to remove", style="error")
                 break
             else:
                 view_expense = input(

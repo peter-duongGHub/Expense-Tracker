@@ -9,6 +9,7 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 def total_expenses(file_path, user_budget, Expenses):
     if os.path.exists(file_path):
         expenses: list[Expenses] = []

@@ -7,6 +7,7 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 def remove_expense(file_path):
     while True:
         try:
@@ -24,7 +25,8 @@ def remove_expense(file_path):
                         user_delete = int(
                             input(f"\nWhich expense entry would you like to delete? (1 - {len(lines)}): "))
                         if not 1 <= user_delete <= len(lines):
-                            print(f"Enter valid option between 1 - {len(lines)}\n")
+                            print(
+                                f"Enter valid option between 1 - {len(lines)}\n")
                             continue
                         else:
                             with open(file_path, 'w') as f:
@@ -35,9 +37,9 @@ def remove_expense(file_path):
                                     else:
                                         error.print(
                                             f"You have successfully deleted entry {user_delete}", style="success")
-                                    
+
                                     index += 1
-                            
+
                             return
 
             else:
@@ -53,6 +55,3 @@ def remove_expense(file_path):
             error.print(
                 f"Please enter a valid expense entry: {e}", style="error")
             continue
-
-
-

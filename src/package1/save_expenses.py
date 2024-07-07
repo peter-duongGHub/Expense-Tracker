@@ -14,5 +14,3 @@ def save_expense(new_expense_object: Expenses, file_path):
         f"Saving your expense.... {new_expense_object} to {file_path}", style="success")
     with open(file_path, "a+") as f:
         f.write(f"{new_expense_object.name}, {new_expense_object.amount:.2f}, {new_expense_object.date}, {new_expense_object.category}\n")
-
-

@@ -7,6 +7,7 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 class Expenses:
     def __init__(self, name, amount, date, category):
         self.name = name
@@ -16,6 +17,7 @@ class Expenses:
 
     def __repr__(self):
         return f"{self.name}, {self.amount:.2f}, {self.date}, {self.category}"
+
 
 def add_expense_category(expense_name, expense_amount, expense_date):
     categories_expense = [
@@ -96,6 +98,7 @@ def add_expense_name():
                 f"Invalid input. Please enter a valid name including only letters!: {e}", style="error")
             continue
 
+
 def add_budget():
     while True:
         try:
@@ -113,6 +116,7 @@ def add_budget():
         except Exception as e:
             print(f"Please enter a valid input: {e}", style="error")
             continue
+
 
 def add_expense_amount():
     while True:
@@ -134,5 +138,3 @@ def add_expense_amount():
             error.print(
                 f"\nPlease enter an integer value greater than 0: {e}\n ", style="error")
             continue
-
-

@@ -279,7 +279,7 @@ The purpose of Peter's Expense Tracking terminal application is to allow users t
 - Remove Expenses from a CSV File
 - Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
 
-### How to use the Expense Tracker & its features (Potential Errors, Steps & Guide, Thorough Walkthrough)  
+### How to use the Expense Tracker & its features (Conditions, Potential Errors, Steps & Guide)  
 > Users type out using only specific letters and numbers where asked. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users.   
 
 ### Main Menu Terminal  

@@ -5,6 +5,7 @@ console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
 error = Console(theme=custom_theme)
 
+
 def main_menu():
     while True:
         try:
@@ -25,15 +26,14 @@ def main_menu():
             else:
                 error.print("Please enter a valid number (1 or 2)",
                             style="error")
-                
+
         except ValueError as e:
             error.print(
                 f"Please enter a valid number (1 or 2): {e}", style="error")
-            
+
         except Exception as e:
             error.print(
                 f"Please enter a valid number (1 or 2): {e}", style="error")
-            
 
 
 def exit_program():
