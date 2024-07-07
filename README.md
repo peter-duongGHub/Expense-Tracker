@@ -36,8 +36,12 @@ There is a minimum of 2GB of storage recommended for this terminal application. 
 **5. Graphics**      
 For this terminal application any graphics hardware supporting 1 of the 3 mentioned operating systems will be sufficient.
 
-**5. Internet Connection**      
+**6. Internet Connection**      
 To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva or GitHub.
+
+### Dependencies
+The following dependencies will be required to ensure the application runs smoothly and as intended for the user.
+- rich
 
 ### Installation Steps - Running a Python Terminal Application   
 #### Step 1 - [Python Installation](https://www.python.org/downloads/)         
@@ -50,15 +54,15 @@ Users must first download Python on their operating system. It is recommended to
 Alternatively here are the scripts to downloading python for linux and macOS users.
 
 ##### 1.1 For Linux(Ubuntu):  
-**1.1a. Open a terminal**  
+**1.1a Open a terminal**  
 
-**1.1b. Verify Installation (if not already installed)**    
+**1.1b Verify Installation (if not already installed)**    
 
 ```
 python3 --version
 ```
 
-**1.1c. Install Python 3.6**    
+**1.1c Install Python 3.6**    
 
 ```
 sudo apt-get update
@@ -66,21 +70,21 @@ sudo apt-get install python3.6
 ```
 
 ##### 1.2 For MacOs:     
-**1. Open a terminal**
+**1.2a Open a terminal**
 
-**1.2a. Check if Homebrew Installed**  
+**1.2b Check if Homebrew Installed**  
 
 ```
 brew --version
 ```
 
-**1.2b. Install Homebrew if not installed**   
+**1.2c Install Homebrew if not installed**   
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-**1.2c. Install Python**   
+**1.2d Install Python**   
 ```
 brew install python
 ```
@@ -102,33 +106,33 @@ Users must check if they have Pip installed. Installation of pip will be necessa
 Alternatively here are the scripts to downloading pip.
 
 ##### 3.1 For Linux:
-**3.1a. Open a terminal**
+**3.1a Open a terminal**
 
-**3.1b. Updates packages**
+**3.1b Updates packages**
 ```
 sudo apt update
 ```
 
-**3.1c. Install Pip for Python3**
+**3.1c Install Pip for Python3**
 ```
 sudo apt install python3-pip
 ```
 
-**3.1d. Verify Installation**
+**3.1d Verify Installation**
 ```
 pip3 --version
 ```
 
 ##### 3.2 For MacOS:
 
-**3.2a. Open a terminal**
+**3.2a Open a terminal**
 
-**3.2b. Install pip if not already installed**
+**3.2b Install pip if not already installed**
 ```
 python3 -m ensurepip
 ```
 
-**3.2c. Verify installation**
+**3.2c Verify installation**
 ```
 pip3 --version
 ```
@@ -136,21 +140,21 @@ pip3 --version
 #### Step 4 - Extract Zip File, Obtain from Repository & Running the Application  
 Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. Ensure you have followed the necessary steps above first (install Python, Pip, Python Interpreter etc.) 
 
-**4a. Open a terminal**
+**4a Open a terminal**
 
-**4b. Check current working directory**  
+**4b Check current working directory**  
 
 ```
 pwd
 ```
 
-**4c. Navigate into project directory folder ({PeterDuong}_T1A3) by changing directory (read disclaimer below)**    
+**4c Navigate into project directory folder ({PeterDuong}_T1A3) by changing directory**    
 
 ``` 
 cd {PeterDuong}_T1A3
 ```  
 
-**4d. Change directory into source code folder (named 'src')**  
+**4d Change directory into source code folder (named 'src')**  
 This will contain all the necessary code, packages, dependencies (inside requirements.txt), executables (.sh file).  
 
 ``` 
@@ -160,237 +164,122 @@ cd src
 **Step 5 - Create a virtual environment**    
 Users should ensure they are working in a virtual environment to help create an isolated environment ensuring this application has its own dependencies and any dependencies installed do not affect any other potential python projects the users may be related to or viewing.  
 
-##### 4.1 For Linux:  
+##### 5.1 For Linux:  
 
-**4.1a. Open a terminal**  
+**5.1a Open a terminal**  
 
-**4.1b. Install Virtualenv (may need to input sudo in front of pip)**        
+**5.1b Install Virtualenv (may need to input sudo in front of pip)**        
 ``` 
 pip install virtualenv
 ```  
 
-**4.1c. Create virtual environment - <venv_name> may be replaced with the name of the virtual environment you would like to create**     
+**5.1c Create virtual environment - <venv_name> may be replaced with the name of the virtual environment you would like to create**     
 
 ``` 
 python3 -m venv <venv_name>
 ```  
 
-**4.1d. Activate virtual environment**     
+**5.1d Activate virtual environment**     
 
 ``` 
 source venv/bin/activate 
 ```  
 
-**4.1e. Deactivating virtual environment when finished utilising**
+**5.1e Deactivating virtual environment when finished utilising**
 
 ```
 deactivate
 ```
 
-##### 4.2 For MacOs:
+##### 5.2 For MacOs:
 
-**4.2a. Open a terminal**    
+**5.2a Open a terminal**    
 
 
-**4.2b. Install virtualenv**    
+**5.2b Install virtualenv**    
 ```
 sudo pip install virtualenv
 ```
 
-**4.2c. Create new virtual environment**  
+**5.2c Create new virtual environment**  
 ```
 virtualenv venv
 ```
 
-**4.2d. Activate virtualenv**    
+**5.2d Activate virtualenv**    
 ```
 source venv/bin/activate
 ```
 
-**4.2e. Deactivate virtualenv when finished utilising**  
+**5.2e Deactivate virtualenv when finished utilising**  
 ```
 deactivate
 ```
 
-**Disclaimer**: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. 
+**4 & 5 Disclaimer**: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. 
 These steps are meant for macOS and linux users, this may vary for windows users. 
- 
-
-1. Install dependencies (requirements.txt)  
-The requirements.txt file will include the following dependencies for installation:  
-- rich
-
-``` pip install -r requirements.txt ```  
-
-1. Next you may run the Expense tracking application using:    
-
-``` python3 main.py ```  
-
-ALTERNATIVELY, users may use the method below to automate the process to automatically check dependencies, python installation, pip installation, virtual environment, and running of the application without needing to type much. This method involves running a shell executable file with a sophisticated script to automate the process of running the application.  
-
-1. Change directory into project directory folder ({PeterDuong}_T1A3)  
-
-``` cd {PeterDuong}_T1A3 ```  
-
-2. Change directory into source code folder (named 'src')  
-
-``` cd src ```  
-
-3. Run executable expense_tracker.sh file  
-
-``` ./expense_tracker.sh ```  
-
-Disclaimer: This is a very brief guide on running the application. Different factors such as current working directory may affect whether you can initially change directory in the project directory folder. For more information on common terminal commands please visit:  
 
 Common Terminal Commands link:  
 https://gist.github.com/bradtraversy/cc180de0edee05075a6139e42d5f28ce  
 
 Common Terminal Commands Screeshot:  
 ![Terminal-Commands](./docs/TerminalCommands.PNG)  
+ 
+**Step 6.1 - Install dependencies (requirements.txt)**     
+The requirements.txt file will include the following dependencies for installation:  
+- rich
 
+**6.1a Install dependencies from file requirements.txt**
 
-## Overview of Expense Tracker (Purpose, Goals & Functionality)  
-### Purpose  
+``` 
+pip install -r requirements.txt 
+```  
+
+**6.1b Running Expense Tracking Application**
+
+``` 
+python3 main.py 
+```  
+
+ALTERNATIVELY, users may use the method below to automate the process to automatically check dependencies, python installation, pip installation, virtual environment, and running of the application without needing to type much. This method involves running a shell executable file with a sophisticated script to automate the process of running the application.  
+
+**Step 6.2 Alternative executable script file (expense_tracker.sh)**  
+
+**6.2a Run executable expense_tracker.sh file** 
+This step is recommended after all steps from 1 - 5 have been applied.   
+Running this executable file will run scripts to automate the process of running the Expense Tracking application. If one of the specific below steps are not already installed 
+or implemented on your device (Created Virtual Environment) the executable script will not execute the rest of the executable, in turn not run the application.  
+It will NOT:
+- Install Python, it will provide a terminal output if python is not installed: "You do not currently have Python3 installed. Please install Python3 and run the script again"
+- Install Pip, it will provide a terminal output if pip is not installed: "You current do not have pip installed please install pip."
+- Create a Virtual Environment, it will provide a terminal output if one doesnt exist: "There is an error: Virtual environment does not exist. Please setup a virtual environment by inputing 'python3 -m venv venv' and retry." and **exit** the script.
+
+It will:
+- Verify if Python is installed, if so the script will provide a terminal output "You currently have Python3 installed."
+- Verify if Pip is installed, if so the script will provide a terminal output "You current have pip installed."
+- Verify if a Virtual Environment exists, if so the script will provide a terminal output "Virtual environment exists"
+- Activate the virtual environment
+- Install required dependencies
+- Echo a success message if everything goes well "Environment setup complete. Virtual environment activated."
+- Run the Expense Tracking application
+- Deactivate the virtual environment when user completes use of application
+
+``` 
+./expense_tracker.sh 
+```  
+
+## List of Features (at least three) & Description 
+### Overview of Expense Tracker (Purpose & Features)  
 The purpose of Peter's Expense Tracking terminal application is to allow users to quickly and efficiently add, view, remove & total their expenses against a fixed budget implemented by the user. It is a useful application to help users keep track of certain expenses they may have in their lives and provides a swift approach to calculating, categorising and viewing these expenses.   
 
-## List of Features (at least three) & Implementation Plan
-This application will include the following four features:
+**This application will include the following four features:**
 - Add & Save Expenses to a CSV File
+
 - View Expenses from a CSV File
 - Remove Expenses from a CSV File
 - Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
-  
-### Screenshot of Trello (Project Management Platform) - Track Implementation Plan    
-![TrelloBoard](./docs/TrelloFinal.PNG)   
 
-### Feature 1 TrelloBoard - Add & Save Expenses (Checklist of tasks for feature 1)  
-![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)  
-
-### Feature 1 TrellBoard Checklist Items - Add & Save Expenses   
-![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
-![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)  
-
-#### Extra Checklists for Feature 1  
-Add & Save Expenses to CSV File    
-1. Add Expense Name, Add Expense Amount, Add Expense Date
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to return value and end loop  
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 1 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import appropriate module (datetime) 
-
-
-2. Add Expense Category   
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to return value and end loop  
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Enumerate list of categories to display to users
-* [x] Create object instance and return object instance
-* [x] Initialise Category list with predefined categories
-* [x] Use arguments obtained from Expense name, amount & date to create object instance    
-* [x] Determine where feature 1 will be positioned in Application 
-* [x] Apply rich package to style code
-
-### Feature 2 TrelloBoard - View and Remove Expenses (Checklist of tasks for feature 1)  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature2.PNG)  
-
-### Feature 2 TrelloBoard Checklist Items - View and Remove Expenses  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)  
-
-#### Extra Checklists for Feature 2  
-1. View Expenses
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to end loops
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 2 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import necessary module os to determine file path exists 
-* [x] Enumerate expenses and index to show users list of expenses previously entered 
-* [x] Using File/IO read files and store inside variable for user viewing
-
-   
-2. Remove Expenses  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Return statements to end loops
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 2 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import necessary module os to determine file path exists and confirm if any contents within file, if none break loop 
-* [x] Using File/IO read files and store inside variable for user viewing
-* [x] Using File/IO to remove specific lines in CSV file
-
-### Feature 3 TrelloBoard - Total Expenses, Total By Category & Subtract from Budget (Checklist of tasks for feature 1)  
-![TrelloBoard-FeatureThree](./docs/Trello_Feature3.PNG)  
-
-### Feature 3 TrelloBoard Checklist Items - Total Expenses, Total By Category & Subtract from Budget  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist.PNG)  
-![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist_2.PNG)  
-
-#### Extra Checklists for Feature 3  
-1. Total Expenses, Total Expenses by Category, Subtract expenses from Budget  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Flow control using if statements with certain conditions
-* [x] Terminal Output for potential Errors/Successful User input
-* [x] Apply while loop, prompt users again if invalid user input
-* [x] Determine where feature 3 will be positioned in Application 
-* [x] Apply rich package to style code
-* [x] Import appropriate module os
-* [x] Utilise user budget as argument to display remaining user budget to users
-
-### Feature 4 TrelloBoard - Main Menu, Sub Menu & Budget (Checklist of tasks for feature 4)  
-![TrelloBoard-FeatureFour](./docs/Trello_Feature4.PNG)  
-
-### Feature 4 TrelloBoard Checklist Items - Main Menu, Sub Menu & Budget   
-![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist.PNG)
-![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)  
-
-#### Extra Checklists for Feature 4  
-* [x] Define function
-* [x] Apply Try and Except blocks to handle potential errors
-* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
-* [x] Adhere to code styling guide
-* [x] Maintain DRY coding principles
-* [x] Define Variables
-* [x] Ensure users are shown correct available options
-* [x] If statements to control how Menus will interact or behave dependent on user input
-* [x] While true loop to continue menu prompt if user enters invalid input   
-
-## How to use the Expense Tracking application (Potential Errors, Steps & Guide, Thorough Walkthrough)  
+### How to use the Expense Tracker & its features (Potential Errors, Steps & Guide, Thorough Walkthrough)  
 > Users type out using only specific letters and numbers where asked. Any other characters listed outside letters and numbers where appropriate will output an error and reprompt users.   
 
 ### Main Menu Terminal  
@@ -526,11 +415,150 @@ When selecting option 4. Users will be shown the total expense, total expense ba
 When selecting option 5 in the sub menu, users will be returned to the main menu   
 
 ![Return-Success](./docs/Return-Success.PNG)  
-   
-## Algorithm (Thorough Walkthrough of logic)  
-![FlowChart-T1A3-Expense-Tracker](./docs/T1A3-Expense-Tracker.drawio.png)  
 
-## Python Styling Guide
+### Algorithm (Visual Walkthrough of logic)  
+![FlowChart-T1A3-Expense-Tracker](./docs/T1A3-Expense-Tracker.drawio.png)  
+  
+## Trello (Project Management Platform) - Develop Implementation Plan    
+![TrelloBoard](./docs/TrelloFinal.PNG)   
+
+### Outline Feature 1
+
+
+### Feature 1 TrelloBoard - Add & Save Expenses (Checklist of tasks for feature 1)
+![TrelloBoard-FeatureOne](./docs/Trello_Feature1.PNG)  
+
+### Feature 1 TrellBoard Checklist Items - Add & Save Expenses   
+![TrelloBoard-FeatureOne-Checklist](./docs/Trello_Feature1_Checklist.PNG)
+![TrelloBoard-FeatureOne-Checklist_2](./docs/Trello_Feature1_Checklist_2.PNG)  
+
+#### Extra Checklists for Feature 1  
+Add & Save Expenses to CSV File    
+1. Add Expense Name, Add Expense Amount, Add Expense Date
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Flow control using if statements with certain conditions
+* [x] Terminal Output for potential Errors/Successful User input
+* [x] Return statements to return value and end loop  
+* [x] Apply while loop, prompt users again if invalid user input
+* [x] Determine where feature 1 will be positioned in Application 
+* [x] Apply rich package to style code
+* [x] Import appropriate module (datetime) 
+
+
+2. Add Expense Category   
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Flow control using if statements with certain conditions
+* [x] Terminal Output for potential Errors/Successful User input
+* [x] Return statements to return value and end loop  
+* [x] Apply while loop, prompt users again if invalid user input
+* [x] Enumerate list of categories to display to users
+* [x] Create object instance and return object instance
+* [x] Initialise Category list with predefined categories
+* [x] Use arguments obtained from Expense name, amount & date to create object instance    
+* [x] Determine where feature 1 will be positioned in Application 
+* [x] Apply rich package to style code
+
+### Outline Feature 2
+
+### Feature 2 TrelloBoard - View and Remove Expenses (Checklist of tasks for feature 1)  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2.PNG)  
+
+### Feature 2 TrelloBoard Checklist Items - View and Remove Expenses  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist.PNG)  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature2_Checklist2.PNG)  
+
+#### Extra Checklists for Feature 2  
+1. View Expenses
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Flow control using if statements with certain conditions
+* [x] Terminal Output for potential Errors/Successful User input
+* [x] Return statements to end loops
+* [x] Apply while loop, prompt users again if invalid user input
+* [x] Determine where feature 2 will be positioned in Application 
+* [x] Apply rich package to style code
+* [x] Import necessary module os to determine file path exists 
+* [x] Enumerate expenses and index to show users list of expenses previously entered 
+* [x] Using File/IO read files and store inside variable for user viewing
+
+   
+2. Remove Expenses  
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Flow control using if statements with certain conditions
+* [x] Terminal Output for potential Errors/Successful User input
+* [x] Return statements to end loops
+* [x] Apply while loop, prompt users again if invalid user input
+* [x] Determine where feature 2 will be positioned in Application 
+* [x] Apply rich package to style code
+* [x] Import necessary module os to determine file path exists and confirm if any contents within file, if none break loop 
+* [x] Using File/IO read files and store inside variable for user viewing
+* [x] Using File/IO to remove specific lines in CSV file
+
+### Outline Feature 3
+
+### Feature 3 TrelloBoard - Total Expenses, Total By Category & Subtract from Budget (Checklist of tasks for feature 1)  
+![TrelloBoard-FeatureThree](./docs/Trello_Feature3.PNG)  
+
+### Feature 3 TrelloBoard Checklist Items - Total Expenses, Total By Category & Subtract from Budget  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist.PNG)  
+![TrelloBoard-FeatureTwo](./docs/Trello_Feature3_Checklist_2.PNG)  
+
+#### Extra Checklists for Feature 3  
+1. Total Expenses, Total Expenses by Category, Subtract expenses from Budget  
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Flow control using if statements with certain conditions
+* [x] Terminal Output for potential Errors/Successful User input
+* [x] Apply while loop, prompt users again if invalid user input
+* [x] Determine where feature 3 will be positioned in Application 
+* [x] Apply rich package to style code
+* [x] Import appropriate module os
+* [x] Utilise user budget as argument to display remaining user budget to users
+
+### Outline Feature 4
+
+### Feature 4 TrelloBoard - Main Menu, Sub Menu & Budget (Checklist of tasks for feature 4)  
+![TrelloBoard-FeatureFour](./docs/Trello_Feature4.PNG)  
+
+### Feature 4 TrelloBoard Checklist Items - Main Menu, Sub Menu & Budget   
+![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist.PNG)
+![TrelloBoard-FeatureFour-Checklist](./docs/Trello_Feature4_Checklist_2.PNG)  
+
+#### Extra Checklists for Feature 4  
+* [x] Define function
+* [x] Apply Try and Except blocks to handle potential errors
+* [x] Test application by inputting a variety of potential characters users may input (numbers, letters, characters (@,#,%,!) etc.)
+* [x] Adhere to code styling guide
+* [x] Maintain DRY coding principles
+* [x] Define Variables
+* [x] Ensure users are shown correct available options
+* [x] If statements to control how Menus will interact or behave dependent on user input
+* [x] While true loop to continue menu prompt if user enters invalid input      
+
+## Python Code Styling Guide - Styling convention
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
 
 ### Screenshot of AutoPEP8 Used for Expense Tracking Application all files.
