@@ -40,83 +40,183 @@ For this terminal application any graphics hardware supporting 1 of the 3 mentio
 To install python, pip, necessary dependencies such as Python packages, libraries etc an internet connection will be required. An internet connection will also be required to install a text editor such as Visual Studio Code/PyCharm and to obtain the application source code from Canva or GitHub.
 
 ### Installation Steps - Running a Python Terminal Application   
-#### Step 1 - Python Installation        
+#### Step 1 - [Python Installation](https://www.python.org/downloads/)         
 **Python**       
 Users must have Python installed on their devices to run the Expense Tracking Application. Alternatively windows users that do not have python installed may use py2exe which will package the python script into an executable. Py2exe will contain the correct modules and python interpreter to help run the script.  
 
-Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found here. Please follow the instructions provided in the web link to have Python installed.    
-[Python-Download](https://www.python.org/downloads/)  
+Users must first download Python on their operating system. It is recommended to download Python version 3.6 or greater. The download for Linux, Windows and Mac may be found by click "Python Installation". Please follow the instructions provided in the web link to have Python installed.    
 ![Python-Download-Screenshot](./docs/DownloadPython.PNG) 
 
-Alternatively here are the scripts to downloading python.
+Alternatively here are the scripts to downloading python for linux and macOS users.
 
-##### For Linux(Ubuntu):
+##### 1.1 For Linux(Ubuntu):  
+**1.1a. Open a terminal**  
 
-**Verify Installation**    
+**1.1b. Verify Installation (if not already installed)**    
 
 ```
 python3 --version
 ```
 
-**Install Python 3.6**    
+**1.1c. Install Python 3.6**    
 
 ```
 sudo apt-get update
 sudo apt-get install python3.6
 ```
 
-##### For MacOs:   
+##### 1.2 For MacOs:     
+**1. Open a terminal**
 
-**Check if Homebrew Installed**  
+**1.2a. Check if Homebrew Installed**  
 
 ```
 brew --version
 ```
 
-**Install Homebrew if not installed**   
+**1.2b. Install Homebrew if not installed**   
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-**Install Python**   
+**1.2c. Install Python**   
 ```
 brew install python
 ```
 
-#### Step 2 - Text Editor, IDE or Terminal (Ubuntu)    
+#### Step 2 - [Text Editor](https://code.visualstudio.com/download), [IDE](https://www.jetbrains.com/pycharm/download/?section=windows) or [Terminal](https://ubuntu.com/download)      
 If users do not currently already have one, they must then download a text editor such as Visual Studio Code, IDE such as PyCharm or Terminal (such as Ubuntu) to run the terminal application. Links of both Visual Studio Code, PyCharm and Ubuntu are listed below.  Please follow the instructions provided in the web link to have a text editor or IDE installed.   
 
-[Visual-Studio-Code](https://code.visualstudio.com/download)   
 ![Visual-Studio-Code-Screenshot](./docs/VSCode.PNG)  
 
-[PyCharm](https://www.jetbrains.com/pycharm/download/?section=windows)  
 ![PyCharm](./docs/PyCharm.PNG)  
 
-[Ubuntu](https://ubuntu.com/download)
-[Ubuntu](./docs/UbuntuDownload.PNG)
+![Ubuntu](./docs/UbuntuDownload.PNG)
 
 
 #### Step 3 - [Installation of Pip](https://pip.pypa.io/en/stable/installation/) 
 Users must check if they have Pip installed. Installation of pip will be necessary to help with installation of dependencies for this application. A screenshot to installing pip is provided below. Users may click "Installation of Pip" to direct themselves to a webpage including instructions to install pip.
 ![Pip-Install](./docs/PipInstall.PNG)  
 
-#### Step 4.1 - Extract Zip File & Running the Application  
-Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu:  
+Alternatively here are the scripts to downloading pip.
 
-1. Change directory into project directory folder ({PeterDuong}_T1A3)    
+##### 3.1 For Linux:
+**3.1a. Open a terminal**
+
+**3.1b. Updates packages**
+```
+sudo apt update
+```
+
+**3.1c. Install Pip for Python3**
+```
+sudo apt install python3-pip
+```
+
+**3.1d. Verify Installation**
+```
+pip3 --version
+```
+
+##### 3.2 For MacOS:
+
+**3.2a. Open a terminal**
+
+**3.2b. Install pip if not already installed**
+```
+python3 -m ensurepip
+```
+
+**3.2c. Verify installation**
+```
+pip3 --version
+```
+
+#### Step 4 - Extract Zip File, Obtain from Repository & Running the Application  
+Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. Ensure you have followed the necessary steps above first (install Python, Pip, Python Interpreter etc.) 
+
+**4a. Open a terminal**
+
+**4b. Check current working directory**  
+
+```
+pwd
+```
+
+**4c. Navigate into project directory folder ({PeterDuong}_T1A3) by changing directory (read disclaimer below)**    
 
 ``` 
 cd {PeterDuong}_T1A3
 ```  
 
-2. Change directory into source code folder (named 'src')  
+**4d. Change directory into source code folder (named 'src')**  
+This will contain all the necessary code, packages, dependencies (inside requirements.txt), executables (.sh file).  
 
-``` cd src ```  
+``` 
+cd src 
+```  
 
-3. Create a virtual environment (see steps provided below in 4.2)  
+**Step 5 - Create a virtual environment**    
+Users should ensure they are working in a virtual environment to help create an isolated environment ensuring this application has its own dependencies and any dependencies installed do not affect any other potential python projects the users may be related to or viewing.  
 
-4. Install dependencies (requirements.txt)  
+##### 4.1 For Linux:  
+
+**4.1a. Open a terminal**  
+
+**4.1b. Install Virtualenv (may need to input sudo in front of pip)**        
+``` 
+pip install virtualenv
+```  
+
+**4.1c. Create virtual environment - <venv_name> may be replaced with the name of the virtual environment you would like to create**     
+
+``` 
+python3 -m venv <venv_name>
+```  
+
+**4.1d. Activate virtual environment**     
+
+``` 
+source venv/bin/activate 
+```  
+
+**4.1e. Deactivating virtual environment when finished utilising**
+
+```
+deactivate
+```
+
+##### 4.2 For MacOs:
+
+**4.2a. Open a terminal**    
+
+
+**4.2b. Install virtualenv**    
+```
+sudo pip install virtualenv
+```
+
+**4.2c. Create new virtual environment**  
+```
+virtualenv venv
+```
+
+**4.2d. Activate virtualenv**    
+```
+source venv/bin/activate
+```
+
+**4.2e. Deactivate virtualenv when finished utilising**  
+```
+deactivate
+```
+
+**Disclaimer**: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. 
+These steps are meant for macOS and linux users, this may vary for windows users. 
+ 
+
+1. Install dependencies (requirements.txt)  
 The requirements.txt file will include the following dependencies for installation:  
 - rich
 
@@ -148,36 +248,6 @@ https://gist.github.com/bradtraversy/cc180de0edee05075a6139e42d5f28ce
 Common Terminal Commands Screeshot:  
 ![Terminal-Commands](./docs/TerminalCommands.PNG)  
 
-#### Step 4.2 - Virtual Environment   
-Users should ensure they are working in a virtual environment, to help create an isolated environment ensuring this application has its own dependencies and any dependencies installed do not affect any other potential python projects the users may be related to.  
-
-After pip has been installed:  
-
-Inside a terminal application such as Ubuntu, the following scripts may be applied to create a virtual environment:  
-
-1. Install Virtualenv    
-``` pip install virtualenv ```  
-
-2. Change Directory to project folder   
-
-``` cd {PeterDuong}_T1A3 ```  
-
-3. Change Directory to src folder  
-
-``` cd src ```  
-
-4. Create virtual environment - venv    
-
-``` python<version> -m venv venv ```  
-
-5. Activate virtual environment   
-
-``` source venv/bin/activate ```  
-
-Disclaimer: This is a very brief installation guide on creating and activating a Virtual Environment. Users may need to check the current directory they are in and navigate correctly to the project directory folder. These steps are meant for macOS and linux users. For further information please visit:  
-
-For windows:    
-https://docs.python.org/3/library/venv.html  
 
 ## Overview of Expense Tracker (Purpose, Goals & Functionality)  
 ### Purpose  
