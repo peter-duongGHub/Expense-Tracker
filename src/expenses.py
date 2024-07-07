@@ -3,8 +3,6 @@ import os.path
 from rich import print
 from rich.console import Console
 from rich.theme import Theme
-import sys
-import pandas as pd
 
 console = Console()
 custom_theme = Theme({"success": "green", "error": "red"})
@@ -155,6 +153,7 @@ def view_expenses(file_path):
                 continue
     else:
         error.print("You currently have no expense entries", style="error")
+        return
 
 
 def add_budget():
@@ -232,8 +231,8 @@ def remove_expense(file_path):
                     else:
                         for i, line in enumerate(lines):
                             print(f"{i+1}. {line}".strip())
-                            user_delete = int(
-                                input(f"Which expense entry would you like to delete? (1 - {len(lines)}): "))
+                        user_delete = int(
+                            input(f"Which expense entry would you like to delete? (1 - {len(lines)}): "))
                         with open(file_path, 'w') as f:
                             index = 1
                             for line in lines:
@@ -243,9 +242,9 @@ def remove_expense(file_path):
                                 else:
                                     error.print(
                                         f"You have successfully deleted entry {user_delete}", style="success")
-                                    return
-
                                 index += 1
+                        return
+
             else:
                 error.print(
                     "You do not currently have any expense entries to remove! ", style="error")
@@ -254,23 +253,22 @@ def remove_expense(file_path):
         except ValueError as e:
             error.print(
                 f"Please enter a valid expense entry: {e}", style="error")
+            continue
         except Exception as e:
             error.print(
                 f"Please enter a valid expense entry: {e}", style="error")
-
-            exit_program()
+            continue
 
 
 def exit_program():
     while True:
         try:
             reprompt = input("Would you like to add more expenses? (yes/no): ")
-            if reprompt.lower() == "yes":
-                return
-            elif reprompt.lower() == "no":
+            if reprompt.lower() == "yes" or reprompt.lower() == "no":
                 return
             else:
                 error.print("Please input either yes or no", style="error")
+
         except Exception as e:
             error.print(f"Please enter a valid input (yes/no): {e}")
 
@@ -297,8 +295,10 @@ def main_menu():
                             style="error")
                 continue
         except ValueError as e:
-            error.print("Please enter a valid number (1 or 2)", style="error")
+            error.print(
+                f"Please enter a valid number (1 or 2): {e}", style="error")
             continue
         except Exception as e:
-            error.print("Please enter a valid number (1 or 2)", style="error")
+            error.print(
+                f"Please enter a valid number (1 or 2): {e}", style="error")
             continue

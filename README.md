@@ -145,7 +145,13 @@ https://docs.python.org/3/library/venv.html
 ### Purpose  
 The purpose of Peter's Expense Tracking terminal application is to allow users to quickly and efficiently add, view, remove & total their expenses against a fixed budget implemented by the user. It is a useful application to help users keep track of certain expenses they may have in their lives and provides a swift approach to calculating, categorising and viewing these expenses.   
 
-## List of Features (at least three) & Implementation Plan     
+## List of Features (at least three) & Implementation Plan
+This application will include the following four features:
+- Add & Save Expenses to a CSV File
+- View Expenses from a CSV File
+- Remove Expenses from a CSV File
+- Total Expenses, Total by Category and Subtract from Budget (from a CSV File)
+  
 ### Screenshot of Trello (Project Management Platform) - Track Implementation Plan    
 ![TrelloBoard](./docs/TrelloFinal.PNG)   
 
@@ -297,7 +303,8 @@ If users select '2. Exit Program' the terminal application will end leaving a te
 **Conditions and Error Handling**  
 User input must be in the form of a number restricted between 1 and 2 (select either 1 or 2). Any characters, letters, numbers etc typed other than the integers 1 and 2 will result in an error terminal output "Please enter a valid number (1 or 2)" followed by a reprompt of the main menu asking for a user selection.  
 
-![MainMenu1.1](./docs/Error2MainMenu.PNG)  
+![MainMenu1.1](./docs/Error2MainMenu.PNG) 
+![MainMenu1.2](./docs/Main-Error2.PNG) 
    
 #### User Budget Input  
 After selecting option 1 in the main menu  users must enter a budget. 
@@ -412,12 +419,8 @@ When selecting option 5 in the sub menu, users will be returned to the main menu
 
 ![Return-Success](./docs/Return-Success.PNG)  
    
-## Algorithms  
-### Visual Representation - Screenshot of FlowChart
+## Algorithm (Thorough Walkthrough of logic)  
 ![FlowChart-T1A3-Expense-Tracker](./docs/Final_T1A3-Expense-Tracker.drawio.png)  
-
-### Textual Representation
-
 
 ## Python Styling Guide
 My chosen styling guide is PEP 8 – Style Guide for Python Code(van Rossum, Warsaw and Coghlan, 2001). My terminal application will adhere to PEP 8, a commonly used styling guide within Python (GeeksforGeeks, 2020). I have an installed autopep8 package to have my code adhere to PEP 8 Styling guide standards consistently throughout my application.
