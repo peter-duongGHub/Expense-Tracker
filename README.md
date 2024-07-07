@@ -138,29 +138,56 @@ pip3 --version
 ```
 
 #### Step 4 - Extract Zip File, Obtain from Repository & Running the Application  
-Users must download Peter's Expense Tracker Terminal Application zip file and have the file extracted (from Canva) or download the source code from GitHub(https://github.com/peter-duongGHub?tab=repositories) to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. 
-Ensure you have followed the necessary steps [above](#step-1---python-installation) first (install Python, Pip, Python Interpreter etc.) 
+Users can either download Peter's Expense Tracker Terminal Application zip file and have the file extracted (from Canva) or get the source code from [GitHub](#link-to-source-control-repository--screenshot) through cloning, explained in [section 4.2](#41-cloning-repository-method) to use the terminal application. The Expense tracking application source code file will be located in {PeterDuong}_T1A3 directory and can be run with the following methods using a terminal such as Ubuntu. 
+Ensure you have followed the necessary steps [above](#step-1---python-installation) first.
 
-**4a Open a terminal**
+#### 4.1 Extract Zip File Method
+**4.1a Open a terminal**  
 
-**4b Check current working directory**  
+**4.1b Check current working directory**    
 
 ```
 pwd
 ```
 
-**4c Navigate into project directory folder ({PeterDuong}_T1A3) by changing directory**    
+**4.1c Navigate into project directory folder ({PeterDuong}_T1A3) by changing directory**      
 
 ``` 
 cd {PeterDuong}_T1A3
 ```  
 
-**4d Change directory into source code folder (named 'src')**  
+**4.1d Change directory into source code folder (named 'src')**    
 This will contain all the necessary code, packages, dependencies (inside requirements.txt), executables (.sh file).  
 
 ``` 
 cd src 
 ```  
+
+#### 4.1 Cloning Repository Method
+**4.2a Go to [Peter's Github](#link-to-source-control-repository--screenshot)**  
+
+**4.2b Getting the repository onto your computer**  
+On Peter's Expense Tracker repository click "Code" and copy git@github.com:peter-duongGHub/t1a3-expense-tracker.git  
+
+![GitHub-Code](./docs/Github.PNG)
+
+**4.2c Open a terminal**  
+
+**4.2d Navigate to a directory where you could like the cloned directory to be placed**  
+
+**4.2e Clone the repository**  
+
+```
+git clone git@github.com:peter-duongGHub/t1a3-expense-tracker.git
+``` 
+
+**4.2f Press Enter**  
+Press Enter to clone the repository
+
+**4.2g Change directory into source folder**  
+```
+cd src
+```
 
 **Step 5 - Create a virtual environment**    
 Users should ensure they are working in a virtual environment to help create an isolated environment ensuring this application has its own dependencies and any dependencies installed do not affect any other potential python projects the users may be related to or viewing.  
